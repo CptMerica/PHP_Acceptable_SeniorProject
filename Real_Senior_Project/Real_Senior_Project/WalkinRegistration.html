@@ -12,24 +12,70 @@
         <form>
             First Name:<input id="First Name" type="text" /> 
             <br>
+            <br />
             Last Name: <input id="LastName" type="text" />
              <br>
+            <br />
             Last 4 of Social Security Number: <input id="SSnumber" type="text" /> <br>
         </form>
         </br>
         <form>
             Education: 
-            <select id="Select1">
+            <select id="EducationSelect">
+                <option> </option>
                 <option> High School Diploma </option>
                 <option> Associate Degree </option>
                 <option> Bachelor </option>
                 <option> Master </option>
                 <option> Doctorate </option>
-                <option> Certification </option>
+                <option> GED </option>
                 <option> None </option>
             </select>
-            
-            
+            <br>
+            <br />
+            County of Residence:
+            <select id="CountySelect">
+                <option> </option>
+                <option> Washington </option>
+                <option> Fayette </option>
+                <option> Westmoreland </option>
+                <option> Allegheny </option>
+                <option> Indiana> </option>
+                <option> Beaver </option>
+                <option> Butler </option>
+            </select>
+            <br>
+            <br />
+            Employement Status:
+            <select id="EmploymentSelect">
+                <option> </option>
+                <option> Unemployed </option>
+                <option> Employed </option>
+                <option> Dislocated</option>
+            </select>
+            <br>
+            <br />
+            Are you a veteran? 
+             Yes <input id="VetYes" type="checkbox" />
+              No <input id="VetNo" type="checkbox" />
+            <br>
+            <br />
+            Are you over 55?
+            Yes <input id="OverYes" type="checkbox" />
+            No <input id="OverNo" type="checkbox" />
+            <br />
+            <br />
+            Are you between the ages of 14 and 24?
+            Yes <input id="YouthYes" type="checkbox" />
+            No <input id="YouthNo" type="checkbox" />
+            <br />
+            <br />
+            Have you ever been convicted of a felony?
+            Yes <input id="FelonyYes" type="checkbox" />
+            No <input id="FelonyNo" type="checkbox" />
+            <br />
+            <br />
+            <input id="Submit" type="button" value="Submit" />
         </form>
     </div>
 </body>
