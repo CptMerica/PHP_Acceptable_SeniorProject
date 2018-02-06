@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacareerlink.jpg" />
+    <Content Include="Reports.html" />
+    <Content Include="SCWDBStyle.css" />
     <Content Include="Start.html" />
     <Content Include="SystemStyleSheet.css" />
     <Content Include="WalkinRegistration.html" />
