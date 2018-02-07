@@ -2,13 +2,15 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Name>PACareerLinkRegistration</Name>
-    <ProjectGuid>de23b3cb-22ea-4805-a778-c86bed545bc3</ProjectGuid>
+    <Name>PACareerLinkRegistrationSystemPHP</Name>
+    <ProjectGuid>1f1323c6-46f7-4a14-84c7-2a7421b9673e</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>
     </RootNamespace>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
-    <AssemblyName>PACareerLinkRegistration</AssemblyName>
+    <AssemblyName>PACareerLinkRegistrationSystemPHP</AssemblyName>
+    <SpecificPageValue>Script1.php</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
@@ -17,6 +19,7 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Start.php" />
+    <Compile Include="index.php" />
+    <Compile Include="Script1.php" />
   </ItemGroup>
 </Project>
