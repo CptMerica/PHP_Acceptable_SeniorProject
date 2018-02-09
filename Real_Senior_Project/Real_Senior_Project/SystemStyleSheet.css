@@ -39,3 +39,7 @@ li a:hover {
     overflow: hidden;
     padding: 5px;
 }
+
+div{
+    font-size: 12px;
+}
