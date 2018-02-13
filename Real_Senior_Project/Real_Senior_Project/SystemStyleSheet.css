@@ -34,10 +34,12 @@ li a:hover {
     background-color: red;
 } 
 
-.row {
+.column {
+  floar: left;
+  width: 25px;
+  word-spacing: 5px;
+
     
-    overflow: hidden;
-    padding: 5px;
 }
 
 div{
