@@ -14,16 +14,27 @@
     <h1><img src="pacareerlink.jpg" style="height: 93px; width: 459px" /></h1>
     <h2>Registration System</h2>
     <p>Please log in to gain access.</p>
-    <form>
-        <div>
-            <p>Username: <input ID="StartUsernameTextBox" type="text" /></p>
+    <form method="post" action="WalkinRegistration.html">
+            <p>Username: <input  type="text" name="username"/></p>
             <br />
-            <p>Password: <input ID="StartPasswordTextBox" type="text" /></p>
-
+            <p>Password: <input  type="password" name="password" /></p>
             <br />
-            <input id="Submit" type="button" value="Submit" />
-        </div>
+            <input id="Submit" type="submit" value="Submit" />
     </form>
+
+    <?php
+   $uname=$_POST['username'];
+   $password=$_POST['password'];
+    
+    
+     $con = mysqli_connect("localhost","root","","Admin")
+    $result = mysql_query($con, "select * FROM 'Admin' WHERE 'uname'='$username' && 'password'='$password'");
+
+        echo "stephen";
+
+
+?>
+    
 
 
 
