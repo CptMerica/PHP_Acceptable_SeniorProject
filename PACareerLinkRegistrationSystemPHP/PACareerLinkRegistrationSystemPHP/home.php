@@ -4,25 +4,21 @@ if(!isset($_SESSION['simple_login'])){
     header("Location: index.php");
     exit();
 }
-
-/*** you can  write your protected content here ***/
-
 ?>
-<h1 align="center">
-    Welcome, <?php echo $_SESSION['simple_login']; ?>
+<link href="StyleSheet.css" rel="stylesheet" />
+<h1>
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 </h1>
-<form>
-    <button id="RegPagebtn"> RegistrationPage</button>
-    <script type="text/javascript">
-        document.getElementById("RegPagebtn").onclick = function () {
-            window.location.href ="RegistrationForm.php";
-        }
-    </script>
 
-    <a href="RegistrationForm.php">RegistrationForm.php</a> 
- 
-</form>
+Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.
+<h1 align="center">
+    Welcome to the SWCDB HOMEPAGE!!!!!
+    </h1>
+
+
 
 <p align="center">
-    <a href="logout.php">Logout</a>
+    <input type="button" onclick="window.location = 'RegistrationForm.php'" class="Redirect" value="Registration Form" />
+    <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
+    <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
 </p>
