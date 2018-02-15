@@ -111,12 +111,31 @@
             
         }
             
-       
-        
-    
-  
+            
+      ?>
 
+    <?php
+    /*** mysql hostname ***/
+    $hostname = 'localhost:3306';
+    /*** mysql username ***/
+    $username = 'fowler';
+    /*** mysql password ***/
+    $password='$cottiE11';
+
+    try
+    {
+    $conn =new PDO("mysql:host=$hostname;dbname=paclregdb", $username, $password);
+    /*** echo a mesage saying we have connected**/
+    echo 'Connected to database';
+    }
+    catch(PDOException $e)
+    {
+        echo $e ->getMessage();  
+    }
+
+    
     ?>
+
 
 
 </body>
