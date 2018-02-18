@@ -23,22 +23,13 @@ if(isset($_POST['username'],$_POST['password'])){
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Simple php login without database by php-gym.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
 
-    <!-- Include stylesheet for better appearance of login form -->
-
-    <h1>
-        <img src="pacareerlink.jpg" style="height: 93px; width: 459px" />
-    </h1>
     <link href="StyleSheet.css" rel="stylesheet" />
-    <style type="text/css">
-        body {
-            padding-top: 20px;
-        }
-    </style>
 </head>
 <body>
+
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
     <h2>Registration System</h2>
    
   <h3 >Please sign in</h3>
@@ -60,6 +51,8 @@ if(isset($_POST['username'],$_POST['password'])){
                 
           
        
-    
+    <p align="bottomright">
+        Created by GJEF
+    </p>
 </body>
 </html>

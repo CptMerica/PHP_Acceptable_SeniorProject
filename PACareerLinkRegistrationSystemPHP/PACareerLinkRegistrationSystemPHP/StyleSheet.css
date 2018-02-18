@@ -1,11 +1,11 @@
 ﻿body 
 {
-        background-color: white;
+        background-color: azure;
         outline-style:solid;
-        border: solid;
+        border: none;
         border-color:red; 
         font-family: Verdana;
-        color: blue;
+        color: midnightblue;
 
 }
 
@@ -13,30 +13,9 @@
  {
     text-align:center;
  }
-/*ul {
-    list-style-type:none;
-    margin: 5;
-    padding: 5;
-    overflow: hidden;
-    background-color: white;
-}
-
-li {
-    float: left;
-    text-align: left;
-}
-
-li a {
-    display: block;
-    color: blue;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-
-
-*/
+ class:reports{
+     text-align:center;
+ }
 section p{
     font-size: 12px;
 }

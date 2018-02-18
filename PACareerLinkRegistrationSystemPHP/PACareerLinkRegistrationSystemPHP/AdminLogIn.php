@@ -28,16 +28,8 @@ if(isset($_POST['username'],$_POST['password'])){
 
     <!-- Include stylesheet for better appearance of login form -->
 
-    <h1>
-        <img src="pacareerlink.jpg" style="height: 93px; width: 459px" />
-    </h1>
-    
+
     <link href="StyleSheet.css" rel="stylesheet" />
-    <style type="text/css">
-        body {
-            padding-top: 20px;
-        }
-    </style>
 </head>
 <body>
     <h2>Admin Login</h2>
@@ -59,8 +51,9 @@ if(isset($_POST['username'],$_POST['password'])){
         </form>
     </div>
 
-
-
+    <p align="bottomright">
+        Created by GJEF
+    </p>
 
 </body>
 </html>
