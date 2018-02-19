@@ -8,7 +8,7 @@
 </head>
 <body>
    
-        <h1> <img src="pacareerlink.jpg" style="height: 93px; width:459px;" </h1>
+        <h1> <img src="pacareerlink.jpg" style="height: 93px; width:459px;" /> </h1>
         <h2> Registration Form</h2>
         <p> Please Complete the form below to register. </p>
         <form method="post" >
@@ -101,7 +101,9 @@
     </class:registration>
     </form>
 
-    </class:registration><?php
+    </class:registration>
+    
+    <?php
         if(isset ($_POST['fname']) )
         {
             $fname = $_POST['fname'];
@@ -115,9 +117,9 @@
     /*** mysql hostname ***/
     $hostname = 'localhost:3306';
     /*** mysql username ***/
-    $username = '';
+    $username = 'root';
     /*** mysql password ***/
-    $password='';
+    $password='password';
     try
     {
     $conn =new PDO("mysql:host=$hostname;dbname=paclregdb", $username, $password);
