@@ -26,6 +26,13 @@
     <Compile Include="index.php" />
     <Compile Include="home.php" />
     <Compile Include="HomeLogOUT.php" />
+    <Compile Include="kigHomeLogin.php" />
+    <Compile Include="kigNoUpdate.php" />
+    <Compile Include="kigOGHome.php" />
+    <Compile Include="kigOGYes.php" />
+    <Compile Include="kigPopulateInfo.php" />
+    <Compile Include="kigRegistrationForm.php" />
+    <Compile Include="kigUpdateInfo.php" />
     <Compile Include="Registration Thanks.php" />
     <Compile Include="RegistrationForm.php" />
     <Compile Include="ReportResults.php" />
