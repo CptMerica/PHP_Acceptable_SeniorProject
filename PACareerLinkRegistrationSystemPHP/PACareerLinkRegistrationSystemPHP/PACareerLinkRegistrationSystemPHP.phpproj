@@ -9,7 +9,7 @@
     </RootNamespace>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
     <AssemblyName>PACareerLinkRegistrationSystemPHP</AssemblyName>
-    <SpecificPageValue>home.php</SpecificPageValue>
+    <SpecificPageValue>databaseConnection.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -19,20 +19,20 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Admin.php" />
-    <Compile Include="AdminLogIn.php" />
-    <Compile Include="AdminLogOut.php" />
-    <Compile Include="DatabaseConnection.php" />
+    <Compile Include="admin.php" />
+    <Compile Include="adminLogIn.php" />
+    <Compile Include="adminLogOut.php" />
+    <Compile Include="databaseConnection.php" />
     <Compile Include="index.php" />
     <Compile Include="home.php" />
-    <Compile Include="HomeLogOUT.php" />
-    <Compile Include="Registration Thanks.php" />
-    <Compile Include="RegistrationForm.php" />
-    <Compile Include="ReportResults.php" />
-    <Compile Include="Reports.php" />
+    <Compile Include="homeLogOUT.php" />
+    <Compile Include="registration Thanks.php" />
+    <Compile Include="registrationForm.php" />
+    <Compile Include="reportResults.php" />
+    <Compile Include="reports.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacareerlink.jpg" />
-    <Content Include="StyleSheet.css" />
+    <Content Include="styleSheet.css" />
   </ItemGroup>
 </Project>

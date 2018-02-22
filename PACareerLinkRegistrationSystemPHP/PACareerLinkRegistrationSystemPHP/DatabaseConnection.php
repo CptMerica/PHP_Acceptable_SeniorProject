@@ -1,8 +1,8 @@
 <?php
 //Connect To Database
-$hostname="11.62.0.35";
-$username="fowler";
-$password="$cottiE10";
+$hostname="localhost";
+$username="dynamicdeveloper";
+$password="burton23";
 $dbname="paclregdb";
 $usertable="County";
 $yourfield = "COUNTY_DESC";
@@ -18,9 +18,9 @@ $connection->close();
 
 <?php
 
-$servername = "11.62.0.35";
-$username = "fowler";
-$password = "$cottiE10";
+$servername = "localhost";
+$username = "dynamicdeveloper";
+$password = "burton23";
 $dbname = "paclregdb";
 $connection = mysqli_connect($hostname, $username, $password);
 mysqli_select_db($dbname, $connection);
