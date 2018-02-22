@@ -1,34 +1,37 @@
 <?php
 //Connect To Database
-$hostname="160.153.77.232";
-$username="terhorst";
-$password="password";
+$hostname="localhost";
+$username="dynamicdeveloper";
+$password="burton23";
 $dbname="paclregdb";
-$con = mysqli_connect($hostname, $username, $password, $dbname);
+$usertable="County";
+$yourfield = "COUNTY_DESC";
+$connection = mysqli_connect($hostname, $username, $password);
+mysqli_select_db($dbname, $connection);
 //Check connection
-if (mysqli_connect_errno()){
-    echo mysqli_connect_error();
-    exit();
-}else{
-    echo "Succesful Connection"
+if (mysqli_connect_error){
+    die("Connection Failed: " .mysqli_connect_error());
 }
-
+echo "connected successfully";
+$connection->close();
 ?>
 
+<?php
 
-/*
-$servername = "160.153.77.232";
+$servername = "localhost";
 $username = "dynamicdeveloper";
 $password = "burton23";
 $dbname = "paclregdb";
-$connection = mysqli_connect($hostname, $username, $password, $dbname);
+$connection = mysqli_connect($hostname, $username, $password);
+mysqli_select_db($dbname, $connection);
 
-if (mysqli_connect_errno){
-    echo mysqli_connect_error();
-    exit();
-}else{
-    echo "Succesful Connection"
+// Create connection
+$connection = new mysq($servername, $username, $password, $dbname);
+// Check connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
+
 $sql = "SELECT COUNTY_ID, COUNTY_DESC FROM COUNTY ";
 $result = $connection->query($sql);
 
@@ -38,9 +41,7 @@ if ($result->num_rows > 0) {
         echo "County ID: " . $row["COUNTY_ID"]. " County Name: " . $row["COUTNY_DESC"]. "<br>";
     }
 } else {
-    echo "0 results";
+    echo "SUCESSFUL CONNECTION!";
 }
-$connection->close();
-
 
 ?>
