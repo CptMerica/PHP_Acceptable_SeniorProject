@@ -1,54 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <script src="js/bootstrap.min.js"></script>
-</head>
+<?php
+//Connect To Database
+$hostname="11.62.0.35";
+$username="fowler";
+$password="$cottiE10";
+$dbname="paclregdb";
+$usertable="County";
+$yourfield = "COUNTY_DESC";
 
-<body>
-    <div class="container">
-        <div class="row">
-            <h3>PHP CRUD Grid</h3>
-        </div>
-        <div class="row">
-            <p>
-                <a href="create.php" class="btn btn-success">Create</a>
-            </p>
+  
+2	if(isset($_GET['LAST_4_SSN'])){
+3	$LAST_4_SSN=$_GET['LAST_4_SSN'];
+4	//connect  to the database
+5	$connection = mysqli_connect($hostname, $username, $password);
+mysqli_select_db($dbname, $connection);
+//Check connection
+if (mysqli_connect_error){
+    die("Connection Failed: " .mysqli_connect_error());
+}
+echo "connected successfully";
+$connection->close();
 
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Last 4 #s of SSN</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    include 'DatbaseConnection.php';
-                    $pdo = DatabaseConnection::connect();
-                    $sql = 'SELECT * FROM customers ORDER BY id DESC';
-                    foreach ($pdo->query($sql) as $row) {
-                        echo '<tr>';
-                        echo '<td>'. $row['name'] . '</td>';
-                        echo '<td>'. $row['email'] . '</td>';
-                        echo '<td>'. $row['mobile'] . '</td>';
-                        echo '<td width=250>';
-                        echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
-                        echo ' ';
-                        echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
-                        echo ' ';
-                        echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
-                        echo '</td>';
-                        echo '</tr>';
-                    }
-                    Database::disconnect();
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div><!-- /container -->
-</body>
-</html>
+
+8	//-query  the database table 
+9	$sql="SELECT  * FROM Worker WHERE LAST_4_SSN=" . $LAST_4_SSN; 
+10	//-run  the query against the mysql query function 
+11	$result=mysql_query($sql); 
+12	//-create  while loop and loop through result set 
+13	while($row=mysql_fetch_array($result)){ 
+14	  $F_NAME =$row['F_NAME']; 
+15	            $L_NAME=$row['L_NAME']; 
+16	            
+18	//-display  the result of the array 
+19	echo  "<ul>\n"; 
+20	echo  "<li>" . $F_NAME . " " . $L_NAME .  "</li>\n"; 
+21	echo  "<li>" . $LAST_4_SSN . "</li>\n";
+23	echo  "</ul>"; 
+24	} 
+25	
+     
+     ?>
