@@ -19,7 +19,7 @@ if(!isset($_SESSION['simple_login'])){
 
 
     <p align="center">
-        <input type="button" onclick="window.location = 'RegistrationForm.php'" class="Redirect" value="Registration Form" />
+        <input type="button" onclick="window.location = 'homeFirst.php'" class="Redirect" value="Registration Form" />
         <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
         <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
         <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
