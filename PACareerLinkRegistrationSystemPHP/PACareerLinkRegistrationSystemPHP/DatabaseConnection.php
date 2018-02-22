@@ -1,5 +1,5 @@
 <?php
-$hostname = "160.153.77.232";
+$hostname = "www.scwdbpacl.com";
 $username="terhorst";
 $password="password";
 $dbname="paclregdb";
@@ -12,8 +12,5 @@ if(mysqli_connect_errno()){
 } else {
     echo "SUCESSFUL CONNECTION!";
 }
-
-
-
 
 ?>
