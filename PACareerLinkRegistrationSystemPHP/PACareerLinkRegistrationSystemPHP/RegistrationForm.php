@@ -105,9 +105,7 @@
 
 
     </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
 </html>
 

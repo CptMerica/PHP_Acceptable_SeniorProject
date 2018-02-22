@@ -2,7 +2,6 @@
 $error = "";
 if(isset($_POST['username'],$_POST['password'])){
 
-    /*** You can change username & password ***/
     $user = array(
                     "user" => "Username",
                     "pass"=>"Password"
@@ -50,9 +49,6 @@ if(isset($_POST['username'],$_POST['password'])){
 </div>
                 
           
-       
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+      
 </body>
 </html>
