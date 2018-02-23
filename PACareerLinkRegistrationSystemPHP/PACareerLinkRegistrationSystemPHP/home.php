@@ -7,22 +7,18 @@ if(!isset($_SESSION['simple_login'])){
 ?>
 <link href="StyleSheet.css" rel="stylesheet" />
 <body>
-    <h1>
-        <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
-    </h1>
-
-    Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.
-    <h1 align="center">
-        Welcome to the SWCDB HOMEPAGE!!!!!
-    </h1>
-
-
-
-    <p align="center">
-        <input type="button" onclick="window.location = 'homeFirst.php'" class="Redirect" value="Registration Form" />
-        <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
-        <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
-        <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
-    </p>
+    <h1><img src="pacareerlink.jpg" style="height: 93px; width:459px;" /></h1>
+    <h2>Welcome to the PACL Registration System Homepage!</h2>
+    
+    <p>Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.</p>
+    <br />
+    <p>Click here to start the registration process   <input type="button" onclick="window.location = 'homeFirst.php'" class="Redirect" value="Registration" /></p>
+    <br />    
+    <p>Click here for Admin access  <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" /> </p>
+    <br />  
+    <p>Click here to check the connection to the database <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" /></p>
+    <br />
+    <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
+    
 
 </body>
