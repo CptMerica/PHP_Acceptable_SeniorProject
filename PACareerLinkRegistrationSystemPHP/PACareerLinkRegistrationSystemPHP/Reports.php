@@ -94,9 +94,7 @@
         <p align="center">
         <input type="button" onclick="window.location = 'ReportResults.php'" class="Redirect" value="Submit" />
             </p>
-        <p align="bottomright">
-            Created by GJEF
-        </p>
+
     </class:reports>
 </body>
 </html>

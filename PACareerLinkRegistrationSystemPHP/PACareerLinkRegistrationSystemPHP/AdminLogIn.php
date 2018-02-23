@@ -26,8 +26,6 @@ if(isset($_POST['username'],$_POST['password'])){
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Include stylesheet for better appearance of login form -->
-
 
     <link href="StyleSheet.css" rel="stylesheet" />
 </head>
@@ -51,9 +49,6 @@ if(isset($_POST['username'],$_POST['password'])){
         </form>
     </div>
 
-    <p align="bottomright">
-        Created by GJEF
-    </p>
 
 </body>
 </html>

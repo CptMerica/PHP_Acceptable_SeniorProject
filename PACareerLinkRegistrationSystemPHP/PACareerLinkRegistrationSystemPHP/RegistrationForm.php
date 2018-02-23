@@ -8,7 +8,6 @@
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 </head>
 <body>
-    <class:registration align="center">
        
         <h2> Registration Form</h2>
         <p> Please Complete the form below to register. </p>
@@ -53,48 +52,48 @@
                 </select>
                 <p>Purpose of Visit:</p>
                 <ul>
-                    <li>EARN<input id="Earn" type="checkbox" /></li>
-                    <li>Apprenticeship Information <input id="ApprenticeInfo" type="checkbox" /></li>
-                    <li>Prep Class<input id="PrepClass" type="checkbox" /></li>
-                    <li>Education and Training<input id="Education_Training" type="checkbox" /></li>
-                    <li>Scheduled Appointment<input id="SchedApt" type="checkbox" /></li>
-                    <li>Employer Recruitment<input id="EmpRecruit" type="checkbox" /></li>
-                    <li>Employment Testing<input id="EmpTrain" type="checkbox" /></li>
-                    <li>GED/Adult Remediation<input id="GED_Adult" type="checkbox" /></li>
-                    <li>UC Hotline<input id="UCHotline" type="checkbox" /></li>
-                    <li>Job Order Listing<input id="JobOrder" type="checkbox" /></li>
-                    <li>Workshop<input id="Workshop" type="checkbox" /></li>
-                    <li>Job Search/Application<input id="JobSearch" type="checkbox" /></li>
-                    <li>JobGateway Enrollment<input id="JobGatewayEnroll" type="checkbox" /></li>
-                    <li>OVR<input id="OVR" type="checkbox" /></li>
+                    <li><input id="Earn" type="checkbox" />EARN</li>
+                    <li><input id="ApprenticeInfo" type="checkbox" />Apprenticeship Information </li>
+                    <li><input id="PrepClass" type="checkbox" />Prep Class</li>
+                    <li><input id="Education_Training" type="checkbox" />Education and Training</li>
+                    <li><input id="SchedApt" type="checkbox" />Scheduled Appointment</li>
+                    <li><input id="EmpRecruit" type="checkbox" />Employer Recruitment</li>
+                    <li><input id="EmpTrain" type="checkbox" />Employment Testing</li>
+                    <li><input id="GED_Adult" type="checkbox" />GED/Adult Remediation</li>
+                    <li><input id="UCHotline" type="checkbox" />UC Hotline</li>
+                    <li><input id="JobOrder" type="checkbox" />Job Order Listing</li>
+                    <li><input id="Workshop" type="checkbox" />Workshop</li>
+                    <li><input id="JobSearch" type="checkbox" />Job Search/Application</li>
+                    <li><input id="JobGatewayEnroll" type="checkbox" />JobGateway Enrollment</li>
+                    <li><input id="OVR" type="checkbox" />OVR</li>
                 </ul>
 
                 <br />
 
                 <p>Are you a veteran? </p>
                 <ul>
-                    <li>Yes <input id="VetYes" type="checkbox" /></li>
-                    <li>No <input id="VetNo" type="checkbox" /></li>
+                    <li><input id="VetYes" type="checkbox" />Yes</li>
+                    <li><input id="VetNo" type="checkbox" />No</li>
                 </ul>
 
                 <p>Are you over 55?</p>
                 <ul>
-                    <li>Yes <input id="OverYes" type="checkbox" /></li>
-                    <li>No <input id="OverNo" type="checkbox" /></li>
+                    <li><input id="OverYes" type="checkbox" />Yes</li>
+                    <li><input id="OverNo" type="checkbox" />No</li>
                 </ul>
                 <br />
 
                 <p>Are you between the ages of 14 and 24?</p>
                 <ul>
-                    <li>Yes <input id="YouthYes" type="checkbox" /></li>
-                    <li>No <input id="YouthNo" type="checkbox" /></li>
+                    <li><input id="YouthYes" type="checkbox" />Yes</li>
+                    <li><input id="YouthNo" type="checkbox" />No</li>
                 </ul>
                 <br />
 
                 <p>Are you receiving Government Assistance?</p>
                 <ul>
-                    <li>Yes <input id="GovAssistYes" type="checkbox" /></li>
-                    <li> No <input id="GovAssistNo" type="checkbox" /></li>
+                    <li><input id="GovAssistYes" type="checkbox" />Yes</li>
+                    <li><input id="GovAssistNo" type="checkbox" />No</li>
                 </ul>
                 <br />
 
@@ -102,12 +101,6 @@
 
         </form>
 
-
-
-    </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
 </body>
 </html>
 

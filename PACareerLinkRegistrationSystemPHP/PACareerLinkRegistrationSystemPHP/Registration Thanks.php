@@ -14,7 +14,7 @@
     <p align="center">
         <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Close" />    
     </p>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
+
+</html>

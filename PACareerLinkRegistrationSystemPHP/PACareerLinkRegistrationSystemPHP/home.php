@@ -24,7 +24,5 @@ if(!isset($_SESSION['simple_login'])){
         <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
         <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
     </p>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>

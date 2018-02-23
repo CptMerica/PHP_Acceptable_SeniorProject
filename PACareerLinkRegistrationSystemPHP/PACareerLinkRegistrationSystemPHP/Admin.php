@@ -24,7 +24,5 @@ if(!isset($_SESSION['admin_login'])){
         <input type="button" onclick="window.location = 'AdminLogOut.php'" class="Redirect" value="LOG OUT" />
     </p>
 
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
