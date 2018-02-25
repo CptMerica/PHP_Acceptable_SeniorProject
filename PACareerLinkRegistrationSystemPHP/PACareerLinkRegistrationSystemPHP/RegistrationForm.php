@@ -6,7 +6,12 @@
 
 </head>
 <body>
+   
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+    <p:titlebar>
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
+    </p:titlebar>
     <h2> Registration Form</h2>
     <p> Please Complete the form below to register. </p>
 
@@ -50,7 +55,7 @@
             <option> Dislocated</option>
         </select>
         <p>Purpose of Visit:</p>
-        <ul>
+       
             <li><input id="Earn" type="checkbox" />EARN</li>
             <li><input id="ApprenticeInfo" type="checkbox" />Apprenticeship Information </li>
             <li><input id="PrepClass" type="checkbox" />Prep Class</li>
@@ -65,7 +70,7 @@
             <li><input id="JobSearch" type="checkbox" />Job Search/Application</li>
             <li><input id="JobGatewayEnroll" type="checkbox" />JobGateway Enrollment</li>
             <li><input id="OVR" type="checkbox" />OVR</li>
-        </ul>
+        
 
         <br />
 

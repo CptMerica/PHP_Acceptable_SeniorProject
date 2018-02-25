@@ -23,8 +23,8 @@
     <Compile Include="adminLogIn.php" />
     <Compile Include="adminLogOut.php" />
     <Compile Include="databaseConnection.php" />
-    <Compile Include="homeFirst.php" />
-    <Compile Include="homeFirstYes.php" />
+    <Compile Include="visitor.php" />
+    <Compile Include="returnvisitor.php" />
     <Compile Include="index.php" />
     <Compile Include="home.php" />
     <Compile Include="homeLogOUT.php" />
@@ -33,8 +33,8 @@
     <Compile Include="registrationForm.php" />
     <Compile Include="reportResults.php" />
     <Compile Include="reports.php" />
-    <Compile Include="updateInfoNo.php" />
-    <Compile Include="updateInfoYes.php" />
+    <Compile Include="visitreason.php" />
+    <Compile Include="searchuser.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacareerlink.jpg" />

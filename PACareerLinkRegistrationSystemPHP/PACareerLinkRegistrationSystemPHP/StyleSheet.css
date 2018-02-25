@@ -20,14 +20,9 @@ section p{
     font-size: 12px;
 }
 img {
-   width: 800px;
-   height: 100px;
-  
+    width: 800px;
+    height: 100px;
 }
-ul{
-    list-style-type: none;
-}
-
-li{
-    
+p:titlebar{
+text-align:center
 }

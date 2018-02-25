@@ -1,3 +1,6 @@
+
+
+
 <?php
 /*//Connect To Database
 $hostname="11.62.0.35";
@@ -36,7 +39,10 @@ $connection->close();
 25
 */
 ?>
-
+<p:titlebar>
+    <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+    <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
+</p:titlebar>
 <table style="width:100%">
     <tr>
         <th>First Name</th>

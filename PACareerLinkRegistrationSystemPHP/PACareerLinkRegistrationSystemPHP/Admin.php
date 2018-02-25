@@ -14,9 +14,12 @@ if(!isset($_SESSION['admin_login'])){
 
     Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.
     <h1 align="center">
-        Welcome to the Admin HOMEPAGE!!!!!
+        Welcome to the Admin HOMEPAGE
     </h1>
-
+    <p:titlebar>
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Back" />
+    </p:titlebar>
 
 
     <p align="center">
