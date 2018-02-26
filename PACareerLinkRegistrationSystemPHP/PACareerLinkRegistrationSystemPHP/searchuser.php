@@ -36,3 +36,34 @@
 
 </body>
 </html>
+<?php 
+
+require_once('databaseConnection.php');
+
+
+if(isset($_POST['submit'])){
+    $first_name = $_POST['fname'];
+    $last_name = $_POST['lname'];
+    $last4ssn = $_POST['ssnumber'];
+    
+    $sql = "SELECT F_NAME, L_NAME, LAST_4_SSN FROM WORKER WHERE F_NAME=fname, L_NAME=lname, LAST_4_SSN=ssnumber ";
+    $result = $con ->query($sql);
+
+    if($result ->num_rows >0){
+        //output data of each row
+        while($row = $result->fetch_assoc()){
+            echo "Fist Name: ". $row["F_NAME"]. "<br>".
+            "Last Name: ". $row["L_Name"]. "<br>".
+            "Last four of Social Security: ". $row["Last_4_SSN"]. "<br>";
+        }
+       
+    }else{
+        echo 'No Results found';
+    }
+
+    
+    
+    
+}
+
+?>

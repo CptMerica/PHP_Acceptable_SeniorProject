@@ -54,9 +54,17 @@
             <option> Employed </option>
             <option> Dislocated</option>
         </select>
+
+        <p>Office Location:</p>
+        <select id="LocationSelect">
+            <option> Mon Valley </option>
+            <option> Washington </option>
+            <option> Beaver </option>
+            <option> Greene </option>
+        </select>
+
         <p>Purpose of Visit:</p>
-            
-        <ul>
+         <ul>
             <li><input id="Earn" type="checkbox" />EARN</li>
             <li><input id="ApprenticeInfo" type="checkbox" />Apprenticeship Information </li>
             <li><input id="PrepClass" type="checkbox" />Prep Class</li>
@@ -118,8 +126,12 @@ if(isset($_POST['submit'])){
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
     $last4ssn = $_POST['ssnumber'];
-    
-    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN) VALUES('$first_name','$last_name','$last4ssn')";
+    $education = $_POST["EducationSelect"];
+    $employment = $_POST["EmploymentSelect"];
+    $residence = $_POST["CountySelect"];
+    $office = $_POST["LocationSelect"];
+
+    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office')";
 
     $con ->query($sql);
 
