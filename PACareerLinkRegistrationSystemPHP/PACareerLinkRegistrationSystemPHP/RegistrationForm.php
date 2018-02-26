@@ -24,7 +24,7 @@
         <p>Education: </p>
         <select id="EducationSelect">
             <option> </option>
-            <option> None < </option>
+            <option> None</option>
             <option> GED </option>
             <option> High School Diploma </option>
             <option> Associate's Degree </option>
@@ -55,7 +55,8 @@
             <option> Dislocated</option>
         </select>
         <p>Purpose of Visit:</p>
-       
+            
+        <ul>
             <li><input id="Earn" type="checkbox" />EARN</li>
             <li><input id="ApprenticeInfo" type="checkbox" />Apprenticeship Information </li>
             <li><input id="PrepClass" type="checkbox" />Prep Class</li>
@@ -70,7 +71,7 @@
             <li><input id="JobSearch" type="checkbox" />Job Search/Application</li>
             <li><input id="JobGatewayEnroll" type="checkbox" />JobGateway Enrollment</li>
             <li><input id="OVR" type="checkbox" />OVR</li>
-        
+        </ul>
 
         <br />
 

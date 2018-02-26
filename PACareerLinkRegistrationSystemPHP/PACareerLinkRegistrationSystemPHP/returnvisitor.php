@@ -13,7 +13,7 @@
             <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
             <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Back" />
         </p:titlebar>
-        <h2> Registration Form</h2>
+     
         <form method="post">
             <class:registration>
                 <br />
@@ -26,8 +26,6 @@
 
         </form>
     </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
 </html>
