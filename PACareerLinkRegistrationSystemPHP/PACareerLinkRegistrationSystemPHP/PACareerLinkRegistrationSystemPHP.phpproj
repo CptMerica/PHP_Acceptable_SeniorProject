@@ -9,7 +9,7 @@
     </RootNamespace>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
     <AssemblyName>PACareerLinkRegistrationSystemPHP</AssemblyName>
-    <SpecificPageValue>home.php</SpecificPageValue>
+    <SpecificPageValue>databaseConnection.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -23,8 +23,9 @@
     <Compile Include="adminLogIn.php" />
     <Compile Include="adminLogOut.php" />
     <Compile Include="databaseConnection.php" />
-    <Compile Include="homeFirst.php" />
-    <Compile Include="homeFirstYes.php" />
+    <Compile Include="emailtemplate.php" />
+    <Compile Include="visitor.php" />
+    <Compile Include="returnvisitor.php" />
     <Compile Include="index.php" />
     <Compile Include="home.php" />
     <Compile Include="homeLogOUT.php" />
@@ -33,8 +34,8 @@
     <Compile Include="registrationForm.php" />
     <Compile Include="reportResults.php" />
     <Compile Include="reports.php" />
-    <Compile Include="updateInfoNo.php" />
-    <Compile Include="updateInfoYes.php" />
+    <Compile Include="visitreason.php" />
+    <Compile Include="searchuser.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacareerlink.jpg" />

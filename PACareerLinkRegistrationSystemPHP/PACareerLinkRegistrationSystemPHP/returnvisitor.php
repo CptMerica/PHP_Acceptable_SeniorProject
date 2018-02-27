@@ -9,8 +9,11 @@
 </head>
 <body>
     <class:registration align="center">
-
-        <h2> Registration Form</h2>
+        <p:titlebar>
+            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Back" />
+        </p:titlebar>
+     
         <form method="post">
             <class:registration>
                 <br />
@@ -18,13 +21,11 @@
                 <p>Would you like to update your information?</p>
 
 
-                <input type="button" onclick="window.location = 'updateInfoYes.php'" class="Redirect" value="Yes" />
-                <input type="button" onclick="window.location = 'updateInfoNo.php'" class="Redirect" value="No" />
+                <input type="button" onclick="window.location = 'searchuser.php'" class="Redirect" value="Yes" />
+                <input type="button" onclick="window.location = 'visitreason.php'" class="Redirect" value="No" />
 
         </form>
     </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
 </html>

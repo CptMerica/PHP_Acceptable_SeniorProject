@@ -8,6 +8,11 @@
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 </head>
 <body>
+   
+    <p:titlebar>
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
+    </p:titlebar>
     <class:registration align="center">
 
         <h2> Registration Form</h2>
@@ -47,8 +52,6 @@
 
 
     </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
 </html>

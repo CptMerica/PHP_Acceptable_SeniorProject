@@ -9,22 +9,23 @@
 </head>
 <body>
     <class:registration align="center">
+        <p:titlebar>
+            <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
+            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Back" />
+        </p:titlebar>
 
         <h2> Registration Form</h2>
         <form method="post">
-            <class:registration>
+            <class:registration align="center">
                 <br />
 
                 <p>Have you been here before?</p>
-
-
-                <input type="button" onclick="window.location = 'homeFirstYes.php'" class="Redirect" value="Yes" />
+                 <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Yes" />
                 <input type="button" onclick="window.location = 'registrationForm.php'" class="Redirect" value="No" />
 
-        </form>
+</form>
     </class:registration>
-    <p align="bottomright">
-        Created by GJEF
-    </p>
+
 </body>
 </html>

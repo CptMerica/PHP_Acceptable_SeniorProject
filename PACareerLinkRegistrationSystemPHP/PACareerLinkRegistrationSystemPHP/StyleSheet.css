@@ -20,14 +20,17 @@ section p{
     font-size: 12px;
 }
 img {
-   width: 800px;
-   height: 100px;
-  
+    width: 800px;
+    height: 100px;
 }
-ul{
-    list-style-type: none;
+p:titlebar{
+text-align:center
 }
 
+
+
+
 li{
-    
+
+    list-style-type: none;
 }
