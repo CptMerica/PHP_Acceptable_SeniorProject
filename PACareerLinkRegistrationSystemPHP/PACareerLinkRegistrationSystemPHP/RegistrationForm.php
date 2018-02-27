@@ -9,20 +9,20 @@
    
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
     <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home"/>
+        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back"/>
     </p:titlebar>
     <h2> Registration Form</h2>
     <p> Please Complete the form below to register. </p>
 
     <form action="registrationForm.php" method="post">
 
-        <p>First Name:<input name="fname" type="text" /> </p>
-        <p>Last Name: <input name="lname" type="text" /></p>
-        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" /></p>
+        <p>First Name:<input name="fname" type="text" required/> </p>
+        <p>Last Name: <input name="lname" type="text" required/></p>
+        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text"  required/></p>
         <br />
         <p>Education: </p>
-        <select id="EducationSelect">
+        <select id="EducationSelect" required>
             <option> </option>
             <option> None</option>
             <option> GED </option>
@@ -34,7 +34,7 @@
         </select>
 
         <p>County of Residence:</p>
-        <select id="CountySelect">
+        <select id="CountySelect" required>
             <option> </option>
             <option> Washington </option>
             <option> Fayette </option>
@@ -48,7 +48,7 @@
         </select>
 
         <p>Employment Status:</p>
-        <select id="EmploymentSelect">
+        <select id="EmploymentSelect" required>
             <option> </option>
             <option> Unemployed </option>
             <option> Employed </option>
@@ -56,7 +56,7 @@
         </select>
 
         <p>Office Location:</p>
-        <select id="LocationSelect">
+        <select id="LocationSelect" required>
             <option> Mon Valley </option>
             <option> Washington </option>
             <option> Beaver </option>
@@ -83,12 +83,12 @@
 
         <br />
 
-        <p>Are you a veteran? </p>
+        <p>Are you a veteran? </p>        
         <ul>
-            <li><input id="VetYes" type="checkbox" />Yes</li>
-            <li><input id="VetNo" type="checkbox" />No</li>
+            <li><input id="Vet" type="checkbox" value="Yes" required/>Yes</li>
+            <li><input id="Vet" type="checkbox" value="No"required/>No</li>
         </ul>
-
+     
         <p>Are you over 55?</p>
         <ul>
             <li><input id="OverYes" type="checkbox" />Yes</li>
@@ -122,6 +122,7 @@
 require_once('databaseConnection.php');
 
 
+
 if(isset($_POST['submit'])){
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
@@ -131,15 +132,22 @@ if(isset($_POST['submit'])){
     $residence = $_POST["CountySelect"];
     $office = $_POST["LocationSelect"];
 
-    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office')";
 
-    $con ->query($sql);
+        $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office')";
 
-    if($con ->error){
-        echo $con->error;
-    }else{
-        echo 'Insert Successful';
+        $con ->query($sql);
+
+        if($con ->error){
+            echo $con->error;
+        }else{
+            echo 'Insert Successful';
+        }
     }
+
+    
+
+
+  
 
     
    
