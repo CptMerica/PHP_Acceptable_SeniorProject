@@ -26,7 +26,7 @@
         <select name="EducationSelect">
             <option> </option>
             <option value="None"> None</option>
-            <option value="GED"> GED </optionvalue="None">
+            <option value="GED"> GED </option>
             <option value="High School Diploma"> High School Diploma </option>
             <option value="Associate Degress"> Associate Degree </option>
             <option value="Bachelor Degree"> Bachelor Degree </option>
@@ -53,7 +53,7 @@
             <option> </option>
             <option value="Unemployed"> Unemployed </option>
             <option value="Employed"> Employed </option>
-            <option value="Dislocated"> Dislocated</optionvalue="Dislocated">
+            <option value="Dislocated"> Dislocated</option>
         </select>
 
         <p>Office Location:</p>
