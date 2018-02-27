@@ -45,7 +45,7 @@
 
                 <br />
 
-                <input type="button" onclick="window.location = 'Registration Thanks.php'" class="Redirect" value="Submit" />
+                <input type="button" onclick="window.location = 'registrationthanks.php'" class="Redirect" value="Submit" />
 
         </form>
 

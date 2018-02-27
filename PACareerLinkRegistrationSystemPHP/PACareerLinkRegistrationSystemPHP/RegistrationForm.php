@@ -21,67 +21,70 @@
         <p>Last Name: <input name="lname" type="text" /></p>
         <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" /></p>
         <br />
+
         <p>Education: </p>
-        <select id="EducationSelect">
+        <select name="EducationSelect">
             <option> </option>
-            <option> None</option>
-            <option> GED </option>
-            <option> High School Diploma </option>
-            <option> Associate's Degree </option>
-            <option> Bachelor's Degree </option>
-            <option> Master's Degree</option>
-            <option> Doctorate's </option>
+            <option value="None"> None</option>
+            <option value="GED"> GED </optionvalue="None">
+            <option value="High School Diploma"> High School Diploma </option>
+            <option value="Associate Degress"> Associate Degree </option>
+            <option value="Bachelor Degree"> Bachelor Degree </option>
+            <option value="Master Degree"> Master Degree</option>
+            <option value="Doctorate Degree"> Doctorate Degreee </option>
         </select>
 
         <p>County of Residence:</p>
-        <select id="CountySelect">
+        <select name="CountySelect">
             <option> </option>
-            <option> Washington </option>
-            <option> Fayette </option>
-            <option> Westmoreland </option>
-            <option> Allegheny </option>
-            <option> Indiana </option>
-            <option> Beaver </option>
-            <option> Butler </option>
-            <option> Greene </option>
-            <option> Other </option>
+            <option value="Washington"> Washington </option>
+            <option value="Fayette"> Fayette </option>
+            <option value="Westmoreland"> Westmoreland </option>
+            <option value="Allegheny"> Allegheny </option>
+            <option value="Indiana"> Indiana </option>
+            <option value="Beaver"> Beaver </option>
+            <option value="Butler"> Butler </option>
+            <option value="Greene"> Greene </option>
+            <option value="Other"> Other </option>
         </select>
 
         <p>Employment Status:</p>
-        <select id="EmploymentSelect">
+        <select name="EmploymentSelect">
             <option> </option>
-            <option> Unemployed </option>
-            <option> Employed </option>
-            <option> Dislocated</option>
+            <option value="Unemployed"> Unemployed </option>
+            <option value="Employed"> Employed </option>
+            <option value="Dislocated"> Dislocated</optionvalue="Dislocated">
         </select>
 
         <p>Office Location:</p>
-        <select id="LocationSelect">
-            <option> Mon Valley </option>
-            <option> Washington </option>
-            <option> Beaver </option>
-            <option> Greene </option>
+        <select name="LocationSelect">
+            <option value="Mon Valley"> Mon Valley </option>
+            <option value="Washington"> Washington </option>
+            <option value="Beaver"> Beaver </option>
+            <option value="Greene"> Greene </option>
         </select>
 
         <p>Purpose of Visit:</p>
-         <ul>
-            <li><input id="Earn" type="checkbox" />EARN</li>
-            <li><input id="ApprenticeInfo" type="checkbox" />Apprenticeship Information </li>
-            <li><input id="PrepClass" type="checkbox" />Prep Class</li>
-            <li><input id="Education_Training" type="checkbox" />Education and Training</li>
-            <li><input id="SchedApt" type="checkbox" />Scheduled Appointment</li>
-            <li><input id="EmpRecruit" type="checkbox" />Employer Recruitment</li>
-            <li><input id="EmpTrain" type="checkbox" />Employment Testing</li>
-            <li><input id="GED_Adult" type="checkbox" />GED/Adult Remediation</li>
-            <li><input id="UCHotline" type="checkbox" />UC Hotline</li>
-            <li><input id="JobOrder" type="checkbox" />Job Order Listing</li>
-            <li><input id="Workshop" type="checkbox" />Workshop</li>
-            <li><input id="JobSearch" type="checkbox" />Job Search/Application</li>
-            <li><input id="JobGatewayEnroll" type="checkbox" />JobGateway Enrollment</li>
-            <li><input id="OVR" type="checkbox" />OVR</li>
-        </ul>
+        
 
-        <br />
+        <select name="ReasonSelect">
+            <option value="ApprenticeInfo"> Apprenticeship Information </option>
+            <option value="Earn"> EARN </option>
+            <option value="Education_Training"> Education and Training </option>
+            <option value="EmpRecruit"> Employer Recruitment </option>
+            <option value="EmpTrain"> Employment Testing </option>
+            <option value="GED_Adult"> GED/Adult Remediation </option>
+            <option value="JobGatewayEnroll"> JobGateway Enrollment </option>
+            <option value="JobOrder"> Job Order Listing </option>
+            <option value="JobSearch"> Job Search/Application </option>
+            <option value="OVR"> OVR </option>
+            <option value="PrepClass"> Prep Class </option>
+            <option value="SchedApt"> Scheduled Appointment </option>
+            <option value="UCHotline"> UC Hotline </option>
+            <option value="Workshop"> Workshop </option>       
+        </select>
+                
+       <br />
 
         <p>Are you a veteran? </p>
         <ul>
@@ -110,7 +113,8 @@
         </ul>
         <br />
 
-        <input type="submit" value="Submit" name="submit" />
+        <input type="button" onclick="window.location = 'registrationthanks.php'" class="Redirect" value="Submit" />
+       
 
     </form>
 
@@ -130,8 +134,8 @@ if(isset($_POST['submit'])){
     $employment = $_POST["EmploymentSelect"];
     $residence = $_POST["CountySelect"];
     $office = $_POST["LocationSelect"];
-
-    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office')";
+    $visit = $_POST["ReasonSelect"];
+    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION,VISIT_PURPOSE) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office', '$visit')";
 
     $con ->query($sql);
 

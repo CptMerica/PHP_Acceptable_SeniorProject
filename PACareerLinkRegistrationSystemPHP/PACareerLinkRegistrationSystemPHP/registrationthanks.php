@@ -12,7 +12,7 @@
     <h2> A staff member will be with you shortly! </h2>
 
     <p align="center">
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Close" />    
+        <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Close" />    
     </p>
 
 </body>
