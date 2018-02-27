@@ -113,7 +113,7 @@
         </ul>
         <br />
 
-        <input type="button" onclick="window.location = 'registrationthanks.php'" class="Redirect" value="Submit" />
+        <input type="submit" name="submit" value="Submit" />
        
 
     </form>
@@ -135,6 +135,7 @@ if(isset($_POST['submit'])){
     $residence = $_POST["CountySelect"];
     $office = $_POST["LocationSelect"];
     $visit = $_POST["ReasonSelect"];
+
     $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION,VISIT_PURPOSE) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office', '$visit')";
 
     $con ->query($sql);
