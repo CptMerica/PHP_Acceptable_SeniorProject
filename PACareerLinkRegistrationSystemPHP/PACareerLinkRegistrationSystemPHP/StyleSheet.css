@@ -23,14 +23,32 @@ img {
     width: 800px;
     height: 100px;
 }
-p:titlebar{
-text-align:center
+
+ul{
+    margin:0px;
+    padding:0px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color:midnightblue;
 }
-
-
-
 
 li{
+    float: left;
 
-    list-style-type: none;
 }
+
+li a{
+    display: block;
+    color:white;
+    text-align:center;
+    padding: 8px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: azure;
+    color:midnightblue;
+}
+
+
+
