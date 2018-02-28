@@ -11,7 +11,19 @@ if(!isset($_SESSION['admin_login'])){
     <h1>
         <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
     </h1>
-
+    <div>
+        <ul id="menu">
+            <li>
+                <a href="home.php">Home</a>
+            </li>
+            <li>
+                <a href="visitor.php">Back</a>
+            </li>
+            <li style="float:right">
+                <a>Help</a>
+            </li>
+        </ul>
+    </div>
     Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.
     <h1 align="center">
         Welcome to the Admin HOMEPAGE

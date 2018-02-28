@@ -14,7 +14,7 @@
     <div>
         <ul id="menu">
             <li><a href="home.php">Home</a></li>
-            <li><a href="returnvisitor.php">Back</a></li>
+            <li><a href="visitor.php">Back</a></li>
             <li style="float:right"><a>Help</a></li>
         </ul>
     </div>
@@ -163,7 +163,7 @@ if(isset($_POST['submit'])){
     }
 
     
-   
+    header("location:registrationthanks.php"); 
     
 }
 

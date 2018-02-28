@@ -8,15 +8,21 @@
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 </head>
 <body>
-   
+    <div>
+        <ul id="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="visitor.php">Back</a></li>
+            <li style="float:right"><a>Help</a></li>
+        </ul>
+    </div>
     <p:titlebar>
         <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
         <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
     </p:titlebar>
     <class:registration align="center">
 
-        <h2> Registration Form</h2>
-        <p> Please Complete the form below to register. </p>
+        <h2> Visit Reason</h2>
+        <p> Please Complete the form so we know how to assist you today. </p>
         <form method="post">
             <class:registration>
 
@@ -26,22 +32,25 @@
                 <br />
 
                 <p>Purpose of Visit:</p>
-                <ul>
-                    <li>EARN<input id="Earn" type="checkbox" /></li>
-                    <li>Apprenticeship Information <input id="ApprenticeInfo" type="checkbox" /></li>
-                    <li>Prep Class<input id="PrepClass" type="checkbox" /></li>
-                    <li>Education and Training<input id="Education_Training" type="checkbox" /></li>
-                    <li>Scheduled Appointment<input id="SchedApt" type="checkbox" /></li>
-                    <li>Employer Recruitment<input id="EmpRecruit" type="checkbox" /></li>
-                    <li>Employment Testing<input id="EmpTrain" type="checkbox" /></li>
-                    <li>GED/Adult Remediation<input id="GED_Adult" type="checkbox" /></li>
-                    <li>UC Hotline<input id="UCHotline" type="checkbox" /></li>
-                    <li>Job Order Listing<input id="JobOrder" type="checkbox" /></li>
-                    <li>Workshop<input id="Workshop" type="checkbox" /></li>
-                    <li>Job Search/Application<input id="JobSearch" type="checkbox" /></li>
-                    <li>JobGateway Enrollment<input id="JobGatewayEnroll" type="checkbox" /></li>
-                    <li>OVR<input id="OVR" type="checkbox" /></li>
-                </ul>
+
+
+                <select name="ReasonSelect" required>
+                    <option> </option>
+                    <option value="ApprenticeInfo"> Apprenticeship Information </option>
+                    <option value="Earn"> EARN </option>
+                    <option value="Education_Training"> Education and Training </option>
+                    <option value="EmpRecruit"> Employer Recruitment </option>
+                    <option value="EmpTrain"> Employment Testing </option>
+                    <option value="GED_Adult"> GED/Adult Remediation </option>
+                    <option value="JobGatewayEnroll"> JobGateway Enrollment </option>
+                    <option value="JobOrder"> Job Order Listing </option>
+                    <option value="JobSearch"> Job Search/Application </option>
+                    <option value="OVR"> OVR </option>
+                    <option value="PrepClass"> Prep Class </option>
+                    <option value="SchedApt"> Scheduled Appointment </option>
+                    <option value="UCHotline"> UC Hotline </option>
+                    <option value="Workshop"> Workshop </option>
+                </select>
 
                 <br />
 
@@ -55,3 +64,30 @@
 
 </body>
 </html>
+<?php 
+
+require_once('databaseConnection.php');
+
+
+if(isset($_POST['submit'])){
+    $first_name = $_POST['fname'];
+    $last_name = $_POST['lname'];
+    $last4ssn = $_POST['ssnumber'];
+   $visit = $_POST["ReasonSelect"];
+
+    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,VISIT_PURPOSE) VALUES('$first_name','$last_name','$last4ssn','$visit')";
+
+    $con ->query($sql);
+
+    if($con ->error){
+        echo $con->error;
+    }else{
+        echo 'Insert Successful';
+    }
+
+    
+    
+    
+}
+
+?>
