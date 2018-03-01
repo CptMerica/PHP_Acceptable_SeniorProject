@@ -2,28 +2,36 @@
 <head>
     <title> Welcome to Registration</title>
 
-    <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="styleSheet.css" rel="stylesheet" />
 
 </head>
 <body>
    
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
-    </p:titlebar>
-    <h2> Registration Form</h2>
+    
+    <br />
+    
+    <div>
+        <ul id="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="visitor.php">Back</a></li>
+            <li style="float:right"><a>Help</a></li>
+        </ul>
+    </div>
+    <p></p>
+    <br />
+    <h2>Registration Form</h2>
     <p> Please Complete the form below to register. </p>
 
     <form action="registrationForm.php" method="post">
 
-        <p>First Name:<input name="fname" type="text" /> </p>
-        <p>Last Name: <input name="lname" type="text" /></p>
-        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" /></p>
+        <p>First Name:<input name="fname" type="text" required/> </p>
+        <p>Last Name: <input name="lname" type="text" required /></p>
+        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" required /></p>
         <br />
 
         <p>Education: </p>
-        <select name="EducationSelect">
+        <select name="EducationSelect" required>
             <option> </option>
             <option value="None"> None</option>
             <option value="GED"> GED </option>
@@ -35,7 +43,7 @@
         </select>
 
         <p>County of Residence:</p>
-        <select name="CountySelect">
+        <select name="CountySelect" required>
             <option> </option>
             <option value="Washington"> Washington </option>
             <option value="Fayette"> Fayette </option>
@@ -49,7 +57,7 @@
         </select>
 
         <p>Employment Status:</p>
-        <select name="EmploymentSelect">
+        <select name="EmploymentSelect" required>
             <option> </option>
             <option value="Unemployed"> Unemployed </option>
             <option value="Employed"> Employed </option>
@@ -57,7 +65,8 @@
         </select>
 
         <p>Office Location:</p>
-        <select name="LocationSelect">
+        <select name="LocationSelect" required>
+            <option> </option>
             <option value="Mon Valley"> Mon Valley </option>
             <option value="Washington"> Washington </option>
             <option value="Beaver"> Beaver </option>
@@ -67,7 +76,8 @@
         <p>Purpose of Visit:</p>
         
 
-        <select name="ReasonSelect">
+        <select name="ReasonSelect" required>
+            <option> </option>
             <option value="ApprenticeInfo"> Apprenticeship Information </option>
             <option value="Earn"> EARN </option>
             <option value="Education_Training"> Education and Training </option>
@@ -87,30 +97,36 @@
        <br />
 
         <p>Are you a veteran? </p>
-        <ul>
-            <li><input id="VetYes" type="checkbox" />Yes</li>
-            <li><input id="VetNo" type="checkbox" />No</li>
-        </ul>
+        <select name="VetSelect" required>
+            <option> </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
 
         <p>Are you over 55?</p>
-        <ul>
-            <li><input id="OverYes" type="checkbox" />Yes</li>
-            <li><input id="OverNo" type="checkbox" />No</li>
-        </ul>
-        <br />
+        <select name="Over55Select" required>
+            <option> </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
 
         <p>Are you between the ages of 14 and 24?</p>
-        <ul>
-            <li><input id="YouthYes" type="checkbox" />Yes</li>
-            <li><input id="YouthNo" type="checkbox" />No</li>
-        </ul>
+        <select name="14to24Select" required>
+            <option> </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
         <br />
 
         <p>Are you receiving Government Assistance?</p>
-        <ul>
-            <li><input id="GovAssistYes" type="checkbox" />Yes</li>
-            <li><input id="GovAssistNo" type="checkbox" />No</li>
-        </ul>
+        <select name="GovAssistanceSelect" required>
+            <option> </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
         <br />
 
         <input type="submit" name="submit" value="Submit" />
@@ -147,7 +163,7 @@ if(isset($_POST['submit'])){
     }
 
     
-   
+    header("location:registrationthanks.php"); 
     
 }
 
