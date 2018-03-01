@@ -1,53 +1,88 @@
 
+<head>
+    <title> Welcome to Registration</title>
+
+    <link href="StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+    <p:titlebar>
+        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
+    </p:titlebar>
+
+</body>
 
 
-<?php
-/*//Connect To Database
-$hostname="11.62.0.35";
-$username="fowler";
-$password="$cottiE10";
-$dbname="paclregdb";
-$usertable="County";
-$yourfield = "COUNTY_DESC";
+    <?php
+    require_once('databaseConnection.php');
 
-2	if(isset($_GET['LAST_4_SSN'])){
-3	$LAST_4_SSN=$_GET['LAST_4_SSN'];
-4	//connect  to the database
-5	$connection = mysqli_connect($hostname, $username, $password);
-mysqli_select_db($dbname, $connection);
-//Check connection
-if (mysqli_connect_error){
-    die("Connection Failed: " .mysqli_connect_error());
-}
-echo "connected successfully";
-$connection->close();
-8	//-query  the database table
-9	$sql="SELECT  * FROM Worker WHERE LAST_4_SSN=" . $LAST_4_SSN;
-10	//-run  the query against the mysql query function
-11	$result=mysql_query($sql);
-12	//-create  while loop and loop through result set
-13	while($row=mysql_fetch_array($result)){
-14	  $F_NAME =$row['F_NAME'];
-15	            $L_NAME=$row['L_NAME'];
-16
-18	//-display  the result of the array
-19	echo  "<ul>\n";
-20	echo  "<li>" . $F_NAME . " " . $L_NAME .  "</li>\n";
-21	echo  "<li>" . $LAST_4_SSN . "</li>\n";
-23	echo  "</ul>";
-24	}
-25
-*/
+    $inputname=$_POST['Search'];
+
+	$query="SELECT * FROM WORKER WHERE F_NAME='$F_NAME', L_NAME='$L_NAME', LAST_4_SSN = '$LAST_4_SSN'";
+    $result = $con->query($sql);
+
+	
+
+	while($rowvalue=mysqli_fetch_array($result))
+	{
+		$F_NAME=$rowvalue['fname'];
+		$L_NAME=$rowvalue['lname'];
+		$LAST_4_SSN=$rowvalue['ssnumber'];
+
+         echo "<table><tr><th>First Name</th><th>Last Name</th><th>LAST 4 SSN</th></tr>";
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+
+
+                echo "<tr><td>".$row["fname"]."</td><td>".$row["lname"]."</td><td>".$row["ssnumber"]."</td></tr>";
+            }
+            echo "</table>";
+        } 
+
+
+
+        if ($result->num_rows > 0) {
+
+
+
+	}
+
+
+
+
+
+  //if(isset($_POST['search']) && ctype_alpha($_POST['fname']) && ctype_alpha($POST['lname']) && ctype_digit($POST['ssnumber'])){
+
+//$row = mysqli_fetch_array(mysqli_query("SELECT * FROM WORKER WHERE LAST_4_SSN={$_POST['ssnumber']}, F_NAME = {$POST['fname']}, L_NAME = {$post['lname']}"));
+
+
+//}
+
+
+
+
+
+
+
+
+
+
+
 ?>
-<p:titlebar>
-    <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-    <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
-</p:titlebar>
-<table style="width:100%">
-    <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Last 4 SNN</th>
-    </tr>
-    
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
