@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Welcome to Registration</title>
+    <title> Update Credentials</title>
     <meta charset="utf-8" />
 
     <link href="StyleSheet.css" rel="stylesheet" />
 
 </head>
 <body>
-  
+
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 
     <div>
         <ul id="menu">
             <li><a href="home.php">Home</a></li>
-            <li><a href="returnvisitor.php">Back</a></li>
+            <li><a href="admin.php">Back</a></li>
             <li style="float:right"><a>Help</a></li>
         </ul>
     </div>
 
     <class:registration align="center">
 
-        <h2> Search User Form</h2>
-        <p> Please Complete the form below to search for your profile. </p>
+        <h2> Change Credentials</h2>
+        <p> Please Complete the form below to change username and password. </p>
         <form method="post">
             <class:registration>
 
-                <p>First Name:<input name="fname" type="text" id="fistname" /> </p>
-                <p>Last Name: <input name="lname" type="text" id="lastname"/></p>
-                <p>Last 4 of Social Security Number: <input name="ssnumber" type="text"id="ssnumber" /></p>
-                <br />
+                <p>Username:<input name="username" type="text" id="fistname" /> </p>
+                <p>Password: <input name="password" type="text" id="lastname" /></p>
+                
+              
 
                 <br />
 
@@ -45,12 +45,15 @@
 
 </body>
 </html>
-<?php 
 
-$fname_query = $_POST['firstname'];
-$lname_query = $_POST['lastname'];
-$ssnum_query = $POST['ssnumber'];
+<?php
+require_once('databaseConnection.php');
+if(isset($_POST[update]))
+{
+    $username = $_POST["ADMIN_USERNAME"];
+    $password = $_post["ADMIN_PASSWORD"];
+}
 
-$getuser = "SELECT F_NAME, L_NAME, LAST_4_SSN FROM WORKER WHERE F_NAME = '".$fname_query."' ";
+$sql = "UPDATE ADMINISTRATOR set ADMIN_USERNAME=$username, ADMIN_PASSWORD=$password"
 
 ?>
