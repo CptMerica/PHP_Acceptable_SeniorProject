@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title> Welcome to Registration</title>
@@ -8,7 +8,7 @@
 
 </head>
 <body>
-  
+
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
 
     <div>
@@ -43,7 +43,26 @@
 
 </body>
 </html>
-<?php 
 
-
-?>
+<?php
+require_once('databaseConnection.php');
+if(isset ($_POST{'submit'}))
+{
+$first_name = $_POST['fname'];
+$last_name = $_POST['lname'];
+$last4ssn = $_POST['ssnumber'];
+$query="SELECT F_NAME, L_NAME, LAST_4_SSN FROM WORKER WHERE LAST_4_SSN = '".$last4ssn."'";
+$result = $con->query($query);
+if ($result->num_rows > 0) {
+echo "<table><tr><th>First Name</th><th>Last Name</th><th>LAST 4 SSN</th></tr>";
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>".$row["F_NAME"]."</td><td>".$row["L_NAME"]."</td><td>".$row["LAST_4_SSN"]."</td></tr>";
+}
+echo "</table>";
+}
+else
+{
+echo "0 results";
+}
+}
