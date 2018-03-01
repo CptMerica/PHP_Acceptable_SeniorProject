@@ -32,9 +32,9 @@
 
         <h2> Report Form</h2>
         <h2> Please fill out the from with the information you would like to build a report with. </h2>
-        <form>
+        <form method="post" id="reportform">
             Location:
-            <select id="LocationReportSelect">
+            <select name="LocationReportSelect">
                 <option> </option>
                 <option> Beaver </option>
                 <option> Washington </option>
@@ -44,7 +44,7 @@
             <br />
             <br />
             Workers Education:
-            <select id="EducationReportSelect">
+            <select name="EducationReportSelect">
                 <option> </option>
                 <option> High School Diploma </option>
                 <option> Associate Degree </option>
@@ -57,7 +57,7 @@
             <br />
             <br />
             County of Residence:
-            <select id="CountyReportSelect">
+            <select name="CountyReportSelect">
                 <option> </option>
                 <option> Washington </option>
                 <option> Fayette </option>
@@ -65,13 +65,13 @@
                 <option> Allegheny </option>
                 <option> Indiana </option>
                 <option> Beaver </option>
-                <option> Butler </option>
+                <option>Butler</option>
                 <option> Greene </option>
             </select>
             <br>
             <br />
             Employement Status:
-            <select id="EmploymentReportSelect">
+            <select name="EmploymentReportSelect">
                 <option> </option>
                 <option> Unemployed </option>
                 <option> Employed </option>
@@ -80,47 +80,82 @@
             <br>
             <br />
             Select Person over 55?
-            <select id="Over55ReportSelect">
+            <select name="Over55ReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
             Select Youth?
-            <select id="YouthReportSelect">
+            <select name="YouthReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
             Select Veteran?
-            <select id="VetReportSelect">
+            <select name="VetReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
             Recieving Food Stamps?
-            <select id="FoodStampsReportSelect">
+            <select name="FoodStampsReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
             Recieving Government Assistance?
-            <select id="GovAssistanceReportSelect">
+            <select name="GovAssistanceReportSelect">
                 <option> </option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
-        </form>
-        <p align="center">
-        <input type="button" onclick="window.location = 'ReportResults.php'" class="Redirect" value="Submit" />
+
+            <p align="center">
+                <input type="submit" onclick="window.location = 'ReportResults.php'" class="Redirect" value="Submit" name="submit" />
             </p>
+        
+        </form>
+
 
     </class:reports>
 </body>
 </html>
 
 <?php 
-
     
+require_once('databaseConnection.php');
+
+
+    if (isset ($_POST['submit'])){
+        
+        $locationreport = $_POST['LocationReportSelect'];
+        $educationreport = $_POST['EducationReportSelect'];
+        $countyreport = $_POST['CountyReportSelect'];
+        $empstatusreport = $_POST['EmploymentReportSelect'];
+        $over55report = $_POST['Over55ReportSelect'];
+        $youthreport = $_POST['YouthReportSelect'];
+        $veteranreport = $_POST['VetReportSelect'];
+        $foodstampreport = $_POST['FoodStampsReportSelect'];
+        $govassistancereport = $_POST['GovAssistanceReportSelect'];
+
+        $sql = "SELECT * FROM WORKER WHERE COUNTY_RESIDENCE = '".$countyreport."'";
+
+        $result=$con ->query($sql);
+
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo"Participant_ID:".$row["PARTICIPANT_ID"].  "First Name:" .$row["F_NAME"]. "Last Name:" .$row["L_NAME"]. "Last Four SSN:" .$row["LAST_4_SSN"]. "Government Assistance:" .$row["GOV_ASST"]. "Food Stamps:" .$row["FOOD_STAMPS"]. "Office Location:" .$row["OFFICE_LOCATION"]. "Residing County:" . $row["COUNTY_RESIDENCE"]. "Education:" .$row["EDUCATION"]. "EMP STATUS:" .$row["STATUS"]. "Vist Reason:" .$row["VISIT_PURPOSE"]. "<br>";
+                
+                
+            }
+        } else {
+            echo "0 results";
+        }
+
+        
+    }
 
 
 
