@@ -17,26 +17,22 @@ if(!isset($_SESSION['admin_login'])){
                 <a href="home.php">Home</a>
             </li>
             <li>
-                <a href="visitor.php">Back</a>
+                <a href="adminlogin.php">Back</a>
             </li>
             <li style="float:right">
                 <a>Help</a>
             </li>
         </ul>
     </div>
-    Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.
+   
     <h1 align="center">
         Welcome to the Admin HOMEPAGE
     </h1>
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Back" />
-    </p:titlebar>
-
+    <p> Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.</p>
 
     <p align="center">
         <input type="button" onclick="window.location = 'Reports.php'" class="Redirect" value="Create Reports" />
-        <input type="button" onclick="window.location = 'AdminLogOut.php'" class="Redirect" value="LOG OUT" />
+        <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="LOG OUT" />
     </p>
 
 

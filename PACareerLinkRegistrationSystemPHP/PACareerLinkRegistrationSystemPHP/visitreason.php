@@ -5,20 +5,19 @@
     <meta charset="utf-8" />
 
     <link href="StyleSheet.css" rel="stylesheet" />
-    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+
 </head>
 <body>
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+
     <div>
         <ul id="menu">
             <li><a href="home.php">Home</a></li>
-            <li><a href="visitor.php">Back</a></li>
+            <li><a href="returnvisitor.php">Back</a></li>
             <li style="float:right"><a>Help</a></li>
         </ul>
     </div>
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
-    </p:titlebar>
+
     <class:registration align="center">
 
         <h2> Visit Reason</h2>

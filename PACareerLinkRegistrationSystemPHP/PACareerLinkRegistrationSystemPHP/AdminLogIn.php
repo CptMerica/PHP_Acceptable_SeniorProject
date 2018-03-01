@@ -30,7 +30,26 @@ if(isset($_POST['username'],$_POST['password'])){
     <link href="StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
-    <h2>Admin Login</h2>
+   
+     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+
+    <div>
+        <ul id="menu">
+            <li>
+                <a href="home.php">Home</a>
+            </li>
+            <li>
+                <a href="home.php">Back</a>
+            </li>
+            <li style="float:right">
+                <a>Help</a>
+            </li>
+        </ul>
+    </div>
+    
+    
+    
+     <h2>Admin Login</h2>
 
     <h3>Please sign in</h3>
 

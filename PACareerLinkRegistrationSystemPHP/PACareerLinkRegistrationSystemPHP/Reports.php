@@ -10,12 +10,18 @@
 </head>
 <body>
 
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+
+    <div>
+        <ul id="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="admin.php">Back</a></li>
+            <li style="float:right"><a>Help</a></li>
+        </ul>
+    </div>
+
     <class:reports align="center">
-        <h1> <img src="pacareerlink.jpg" style="height: 93px; width:459px;" /> </h1>
-        <p:titlebar>
-            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-            <input type="button" onclick="window.location = 'admin.php'" class="Redirect" value="Back" />
-        </p:titlebar>
+
         <h2> Report Form</h2>
         <h2> Please fill out the from with the information you would like to build a report with. </h2>
         <form>

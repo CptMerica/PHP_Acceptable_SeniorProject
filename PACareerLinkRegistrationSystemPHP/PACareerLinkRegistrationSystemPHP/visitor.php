@@ -5,15 +5,19 @@
     <meta charset="utf-8" />
 
     <link href="StyleSheet.css" rel="stylesheet" />
-    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+    
 </head>
 <body>
     <class:registration align="center">
-        <p:titlebar>
-            <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
-            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-            <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Back" />
-        </p:titlebar>
+       
+        <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+        <div>
+            <ul id="menu">
+                <li><a href="home.php">Home</a></li>
+                <li><a href="home.php">Back</a></li>
+                <li style="float:right"><a>Help</a></li>
+            </ul>
+        </div>
 
         <h2> Registration Form</h2>
         <form method="post">

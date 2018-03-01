@@ -14,7 +14,7 @@ if(!isset($_SESSION['simple_login'])){
                 <a href="home.php">Home</a>
             </li>
             <li>
-                <a href="visitor.php">Back</a>
+                <a href="home.php">Back</a>
             </li>
             <li style="float:right">
                 <a>Help</a>

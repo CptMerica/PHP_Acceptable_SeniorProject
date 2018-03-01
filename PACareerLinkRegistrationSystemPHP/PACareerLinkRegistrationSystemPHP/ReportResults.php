@@ -8,11 +8,16 @@
     
 </head>
 <body>
-    <h1> <img src="pacareerlink.jpg" style="height: 93px; width:459px;" /> </h1>
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'reports.php'" class="Redirect" value="Back" />
-    </p:titlebar>
+    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+
+    <div>
+        <ul id="menu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="reports.php">Back</a></li>
+            <li style="float:right"><a>Help</a></li>
+        </ul>
+    </div>
+>
     <h2> Report Results</h2>
     <h2> Your report results will show below! </h2>
     <p align="center">
