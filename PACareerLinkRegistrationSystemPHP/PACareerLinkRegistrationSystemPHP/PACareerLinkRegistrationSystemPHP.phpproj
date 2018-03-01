@@ -24,6 +24,8 @@
     <Compile Include="adminLogOut.php" />
     <Compile Include="databaseConnection.php" />
     <Compile Include="emailtemplate.php" />
+    <Compile Include="updatecredentials.php" />
+    <Compile Include="updatethanks.php" />
     <Compile Include="visitor.php" />
     <Compile Include="returnvisitor.php" />
     <Compile Include="index.php" />
