@@ -11,10 +11,16 @@ if(!isset($_SESSION['simple_login'])){
     <div>
         <ul id="menu">
             <li>
-                <a href="home.php">Home</a>
+                <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
+           </li>
+            <li>
+                <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
             </li>
             <li>
-                <a href="home.php">Back</a>
+                <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />  
+            </li>
+            <li>
+                <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
             </li>
             <li style="float:right">
                 <a>Help</a>
@@ -26,11 +32,4 @@ if(!isset($_SESSION['simple_login'])){
     <p>Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.</p>
     
     
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
-        <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
-        <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
-        <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
-    </p:titlebar>
-
 </body>

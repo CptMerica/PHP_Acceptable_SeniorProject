@@ -8,10 +8,20 @@
 <body>
 
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
-    <p:titlebar>
-        <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
-        <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" />
-    </p:titlebar>
+    <div>
+        <ul id="menu">
+            <li>
+                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            </li>
+            <li>
+                <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="Back" /> 
+            </li>
+            <li style="float:right">
+                <a>Help</a>
+            </li>
+        </ul>
+    </div>
+    
 
 </body>
 
@@ -21,7 +31,7 @@
 
     $inputname=$_POST['Search'];
 
-	$query="SELECT * FROM WORKER WHERE F_NAME='$F_NAME', L_NAME='$L_NAME', LAST_4_SSN = '$LAST_4_SSN'";
+	$query="SELECT * FROM WORKER WHERE F_NAME like'$F_NAME', L_NAMEl LIKE'$L_NAME', LAST_4_SSN LIKE '$LAST_4_SSN'";
     $result = $con->query($sql);
 
 	

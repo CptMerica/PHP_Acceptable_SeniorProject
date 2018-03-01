@@ -8,6 +8,19 @@
 </head>
 <body>
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+    <div>
+        <ul id="menu">
+            <li>
+                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            </li>
+            <li>
+                <input type="button" onclick="window.location = 'registrationFrom.php'" class="Redirect" value="Back" />
+            </li>
+          <li style="float:right">
+                <a>Help</a>
+            </li>
+        </ul>
+    </div>
     <h2> Thanks for Registering!</h2>
     <h2> A staff member will be with you shortly! </h2>
 

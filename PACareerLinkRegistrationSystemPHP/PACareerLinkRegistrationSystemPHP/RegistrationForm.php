@@ -10,14 +10,23 @@
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
     
     <br />
-    
     <div>
         <ul id="menu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="visitor.php">Back</a></li>
-            <li style="float:right"><a>Help</a></li>
-        </ul>
+            <li>
+                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            </li>
+            <li>
+                <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Back" />
+            </li>
+            <li>
+                <input type="button" onclick="window.location = 'help.php'" class="Redirect" value="Help" />
+            </li>
+           
+         </ul>
     </div>
+    
+    <div>
+ 
     <p></p>
     <br />
     <h2>Registration Form</h2>

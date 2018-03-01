@@ -12,6 +12,20 @@
 
     <div>
         <ul id="menu">
+            <li>
+                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+            </li>
+            <li>
+                <input type="button" onclick="window.location = 'reports.php'" class="Redirect" value="Back" />
+            </li>
+                       
+            <li style="float:right">
+                <a>Help</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul id="menu">
             <li><a href="home.php">Home</a></li>
             <li><a href="reports.php">Back</a></li>
             <li style="float:right"><a>Help</a></li>
