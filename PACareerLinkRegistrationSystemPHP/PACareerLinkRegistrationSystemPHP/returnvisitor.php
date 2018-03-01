@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
 
     <link href="StyleSheet.css" rel="stylesheet" />
-    <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
+    
 </head>
 <body>
     <class:registration align="center">

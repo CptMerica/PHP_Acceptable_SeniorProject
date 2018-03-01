@@ -10,18 +10,8 @@ if(!isset($_SESSION['simple_login'])){
     <h1><img src="pacareerlink.jpg" style="height: 93px; width:459px;" /></h1>
     <div>
         <ul id="menu">
-            <li>
-                <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
-           </li>
-            <li>
-                <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
-            </li>
-            <li>
-                <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />  
-            </li>
-            <li>
-                <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
-            </li>
+            <li><a href="Home.php">Home</a>></li>
+            <li><a href="index.php">Back</a></li>
             <li style="float:right">
                 <a>Help</a>
             </li>
@@ -31,5 +21,8 @@ if(!isset($_SESSION['simple_login'])){
     
     <p>Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.</p>
     
-    
+    <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
+    <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />
+    <input type="button" onclick="window.location= 'databaseConnection.php'" class="Redirect" value="DatabaseConnection" />
+    <input type="button" onclick="window.location = 'HomelogOUT.php'" class="Redirect" value="LOG OUT" />
 </body>

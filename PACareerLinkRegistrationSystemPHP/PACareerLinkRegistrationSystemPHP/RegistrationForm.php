@@ -13,25 +13,22 @@
     <div>
         <ul id="menu">
             <li>
-                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+                <a href="home.php">Home</a>
             </li>
             <li>
-                <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Back" />
+                <a href="visitor.php">Back</a>
             </li>
             <li>
-                <input type="button" onclick="window.location = 'help.php'" class="Redirect" value="Help" />
+                <a>Help</a>
             </li>
            
          </ul>
-    </div>
-    
-    <div>
+
  
     <p></p>
     <br />
     <h2>Registration Form</h2>
-    <p> Please Complete the form below to register. </p>
-
+    <p> Please Complete the form below to register. </p>        
     <form action="registrationForm.php" method="post">
 
         <p>First Name:<input name="fname" type="text" required/> </p>

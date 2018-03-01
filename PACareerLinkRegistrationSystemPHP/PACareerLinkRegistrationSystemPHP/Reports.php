@@ -14,14 +14,14 @@
     <div>
         <ul id="menu">
             <li>
-                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+                <a href="home.php">Home</a>
             </li>
             <li>
-                <input type="button" onclick="window.location = 'admin.php'" class="Redirect" value="Back" />
+                <a href="admin.php">Back</a>
             </li>
            
             <li>
-                <input type="button" onclick="window.location= 'helpn.php'" class="Redirect" value="Help" />
+                <a style="float:right">Help</a>
             </li>
           
         </ul>
@@ -117,3 +117,11 @@
     </class:reports>
 </body>
 </html>
+
+<?php 
+
+    
+
+
+
+?>
