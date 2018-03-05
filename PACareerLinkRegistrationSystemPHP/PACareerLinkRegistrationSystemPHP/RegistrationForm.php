@@ -8,9 +8,7 @@
 <body>
    
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
-    
-    <br />
-    <div>
+
         <ul id="menu">
             <li>
                 <a href="home.php">Home</a>
@@ -18,15 +16,12 @@
             <li>
                 <a href="visitor.php">Back</a>
             </li>
-            <li>
+            <li style="float:right">
                 <a>Help</a>
             </li>
            
          </ul>
 
- 
-    <p></p>
-    <br />
     <h2>Registration Form</h2>
     <p> Please Complete the form below to register. </p>        
     <form action="registrationForm.php" method="post">
@@ -126,6 +121,13 @@
 
         <br />
 
+        <p>Do you receive food stamps?</p>
+        <select name="FoodStampsSelect" required>
+            <option> </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br />
         <p>Are you receiving Government Assistance?</p>
         <select name="GovAssistanceSelect" required>
             <option> </option>
@@ -133,6 +135,7 @@
             <option value="No">No</option>
         </select>
 
+        <br />
         <br />
 
         <input type="submit" name="submit" value="Submit" />
@@ -157,8 +160,13 @@ if(isset($_POST['submit'])){
     $residence = $_POST["CountySelect"];
     $office = $_POST["LocationSelect"];
     $visit = $_POST["ReasonSelect"];
+    $vet = $_POST['VetSelect'];
+    $over55 = $_POST['Over55Select'];
+    $youth14to24 = $_POST['14to24Select'];
+    $govtasst = $_POST['GovAssistanceSelect'];
+    $foodstamps = $_POST['FoodStampsSelect'];
 
-    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,EDUCATION,STATUS,COUNTY_RESIDENCE,OFFICE_LOCATION,VISIT_PURPOSE) VALUES('$first_name','$last_name','$last4ssn', '$education' ,'$employment' ,'$residence' ,'$office', '$visit')";
+    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,GOV_ASST,FOOD_STAMPS,OFFICE_LOCATION,COUNTY_RESIDENCE,EDUCATION,STATUS,VISIT_PURPOSE,OVER_55,VET_STATUS,YOUTH_STATUS) VALUES('$first_name','$last_name','$last4ssn', '$govtasst' ,'$foodstamps' ,'$office' ,'$residence', '$education','$employment','$visit', '$over55', '$vet', '$youth14to24')";
 
     $con ->query($sql);
 

@@ -10,13 +10,19 @@ if(!isset($_SESSION['simple_login'])){
     <h1><img src="pacareerlink.jpg" style="height: 93px; width:459px;" /></h1>
     <div>
         <ul id="menu">
-            <li><a href="Home.php">Home</a>></li>
-            <li><a href="index.php">Back</a></li>
+            <li>
+                <a href="home.php">Home</a>
+            </li>
+            <li>
+                <a href="index.php">Back</a>
+            </li>
             <li style="float:right">
                 <a>Help</a>
             </li>
         </ul>
     </div>
+
+
     <h2>Welcome to the PACL Registration System Homepage!</h2>
     
     <p>Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.</p>
