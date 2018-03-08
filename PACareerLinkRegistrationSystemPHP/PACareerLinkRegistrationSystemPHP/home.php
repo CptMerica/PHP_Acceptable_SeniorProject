@@ -1,8 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['simple_login'])){
+if(!isset($_SESSION['center_user_login'])){
+
+    $_SESSION['center_user_login'] = $uname;
     header("Location: index.php");
     exit();
+    
 }
 ?>
 <link href="styleSheet.css" rel="stylesheet" />
@@ -25,7 +28,7 @@ if(!isset($_SESSION['simple_login'])){
 
     <h2>Welcome to the PACL Registration System Homepage!</h2>
     
-    <p>Thanks, <?php echo $_SESSION['simple_login']; ?> for logging in.</p>
+    <p>Thanks, <?php echo $_SESSION['center_user_login']; ?> for logging in.</p>
     
     <input type="button" onclick="window.location = 'visitor.php'" class="Redirect" value="Registration" />
     <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="Admin" />

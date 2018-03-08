@@ -1,11 +1,22 @@
 <?php
 session_start();
 if(!isset($_SESSION['admin_login'])){
-    header("Location: AdminLogIn.php");
+    
+    $_SESSION['admin_login'] = $uname;
+    header("Location: index.php");
     exit();
+   ;
 }
+
 ?>
-<link href="StyleSheet.css" rel="stylesheet" />
+
+<head>
+    <title>Admin Homepage</title>
+
+    <link href="StyleSheet.css" rel="stylesheet" />
+
+</head>
+
 <body>
    
     <h1>
@@ -32,6 +43,7 @@ if(!isset($_SESSION['admin_login'])){
 
     <p align="center">
         <input type="button" onclick="window.location = 'Reports.php'" class="Redirect" value="Create Reports" />
+        <input type="button" onclick="window.location = 'CreateAdmin.php'" class="Redirect" value="Create Admin"/>
         <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="LOG OUT" />
     </p>
 

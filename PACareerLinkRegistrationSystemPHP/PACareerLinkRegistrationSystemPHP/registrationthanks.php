@@ -11,14 +11,16 @@
     <div>
         <ul id="menu">
             <li>
-                <input type="button" onclick="window.location = 'home.php'" class="Redirect" value="Home" />
+                <a href="home.php">Home</a>
             </li>
             <li>
-                <input type="button" onclick="window.location = 'registrationFrom.php'" class="Redirect" value="Back" />
+                <a href="registrationForm.php">Back</a>
             </li>
-          <li style="float:right">
+
+            <li style="float:right">
                 <a>Help</a>
             </li>
+
         </ul>
     </div>
     <h2> Thanks for Registering!</h2>

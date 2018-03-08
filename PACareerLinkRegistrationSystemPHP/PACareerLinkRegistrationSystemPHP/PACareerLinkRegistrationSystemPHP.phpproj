@@ -22,6 +22,7 @@
     <Compile Include="admin.php" />
     <Compile Include="adminLogIn.php" />
     <Compile Include="adminLogOut.php" />
+    <Compile Include="CreateAdmin.php" />
     <Compile Include="databaseConnection.php" />
     <Compile Include="Edit.php" />
     <Compile Include="emailtemplate.php" />
