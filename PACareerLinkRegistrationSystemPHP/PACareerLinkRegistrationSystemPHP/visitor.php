@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <h2> Registration Form</h2>
+        <h2>Sign In</h2>
         <form method="post">
             <class:registration align="center">
                 <br />

@@ -78,7 +78,7 @@ if(isset($_POST['fnamesearch']))
     $query = "SELECT * FROM WORKER WHERE YOUTH_STATUS = '".$youthToSearch."'";
 
     $search_result = filterTable($query);
-} else if (isset($_POST['veteransearch'])){
+} else if (isset($_POST['vetsearch'])){
 
     $vetToSearch = $_POST['VetReportSelect'];
 
@@ -101,15 +101,18 @@ if(isset($_POST['fnamesearch']))
 
     $search_result = filterTable($query);
 
+} else if(isset($_POST['reset'])){
+    
+    $query = "SELECT * FROM `WORKER` ORDER BY PARTICIPANT_ID";
+    $search_result = filterTable($query);
 }
+
 
     else {
 
-        $query = "SELECT * FROM `WORKER`";
+        $query = "SELECT * FROM `WORKER` ORDER BY PARTICIPANT_ID";
         $search_result = filterTable($query);
 
-        unset($_POST['OfficeLocationReportSelect']);
-        unset($_POST['EducationReportSelect']);
     }
 
 
@@ -127,6 +130,12 @@ function filterTable($query)
     $filter_Result = mysqli_query($con, $query);
 
     return $filter_Result;
+
+}
+
+
+function resetTable(){
+   
 
 }
 
@@ -156,28 +165,90 @@ function filterTable($query)
 
         </ul>
     </div>
-
+    <br />
     <form action="reports.php" method="post">
-        <p>Please select one category to search.</p>
-        <div>
-            First Name:
-            <input type="text" name="firstnamesearch"/>
-            <input type="submit" name="fnamesearch" value="Search"/>
+        
+        
+        <div class="reportTableDiv">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Last 4 SSN:</th>
+                    <th>Office Location</th>
+                    <th>Residing County</th>
+                    <th>Education</th>
+                    <th>Employement Status</th>
+                    <th>Purpose of Visit</th>
+                    <th>Veteran Status</th>
+                    <th>Over 55</th>
+                    <th>Between 14 and 24</th>
+                    <th>Government Assistance</th>
+                    <th>Food Stamps</th>
+                </tr><?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['PARTICIPANT_ID'];?>
+                    </td>
+                    <td><?php echo $row['F_NAME'];?>
+                    </td>
+                    <td><?php echo $row['L_NAME'];?>
+                    </td>
+                    <td><?php echo $row['LAST_4_SSN'];?>
+                    </td>
+                    <td><?php echo $row['OFFICE_LOCATION'];?>
+                    </td>
+                    <td><?php echo $row['COUNTY_RESIDENCE'];?>
+                    </td>
+                    <td><?php echo $row['EDUCATION'];?>
+                    </td>
+                    <td><?php echo $row['STATUS'];?>
+                    </td>
+                    <td><?php echo $row['VISIT_PURPOSE'];?>
+                    </td>
+                    <td><?php echo $row['VET_STATUS'];?>
+                    </td>
+                    <td><?php echo $row['OVER_55'];?>
+                    </td>
+                    <td><?php echo $row['YOUTH_STATUS'];?>
+                    </td>
+                    <td><?php echo $row['GOV_ASST'];?> </td>
+
+                    <td><?php echo $row['FOOD_STAMPS'];?> </td>
+
+
+                </tr><?php endwhile;?>
+            </table>
+
         </div>
+        
+        <input type="submit" name="reset" value="Reset"/>
         <br />
-        <div>
+        
+        
+        
+        <p>Please select one category to search.</p>
+        
+        
+            <div style="font-size:small">
+                First Name:
+                <input type="text" name="firstnamesearch" />
+                <input type="submit" name="fnamesearch" value="Search" />
+            </div>
+            <br />
+        <div style="font-size:small">
             Last Name:
             <input type="text" name="lastnamesearch" />
             <input type="submit" name="lnamesearch" value="Search" />
         </div>
-        <br />
-        <div>
+            <br />
+        <div style="font-size:small">
             Last 4 SSN:
             <input type="text" name="last4ssnsearch" />
             <input type="submit" name="l4ssnsearch" value="Search" />
         </div>
-        <br />
-        <div>
+            <br />
+        <div style="font-size:small">
             Site Location:
             <select name="OfficeLocationReportSelect">
                 <option> </option>
@@ -188,9 +259,9 @@ function filterTable($query)
             </select>
             <input type="submit" name="locationsearch" value="Search" />
         </div>
-        <br />
+            <br />
 
-        <div>
+        <div style="font-size:small">
             Education:
             <select name="EducationReportSelect">
                 <option> </option>
@@ -204,9 +275,9 @@ function filterTable($query)
             </select>
             <input type="submit" name="EDUsearch" value="Search" />
         </div>
-        <br />
+            <br />
 
-        <div>
+        <div style="font-size:small">
             County of Residence:
             <select name="CountyReportSelect">
                 <option> </option>
@@ -221,8 +292,8 @@ function filterTable($query)
             </select>
             <input type="submit" name="countysearch" value="Search" />
         </div>
-        <br>
-        <div>
+            <br>
+        <div style="font-size:small">
             Employement Status:
             <select name="EmploymentReportSelect">
                 <option> </option>
@@ -230,43 +301,43 @@ function filterTable($query)
                 <option> Employed </option>
                 <option> Dislocated</option>
             </select>
-            <input type="submit" name="empstatussearch" value="Search"/>
+            <input type="submit" name="empstatussearch" value="Search" />
         </div>
-        <br />
+            <br />
 
-        <div>
+        <div style="font-size:small">
             People over 55
             <select name="Over55ReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
-            <input type="submit" name="55search" value="Search"/>
+            <input type="submit" name="55search" value="Search" />
         </div>
-        <br />
+            <br />
 
-        <div>
+        <div style="font-size:small">
             Between 14 and 24
             <select name="YouthReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
-            <input type="submit" name="youthsearch" value="Search"/>
+            <input type="submit" name="youthsearch" value="Search" />
         </div>
-        <br />
-        
-        <div>
+            <br />
+
+        <div style="font-size:small">
             Veteran
             <select name="VetReportSelect">
                 <option></option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
-            <input type="submit" name="vetsearch" value="Search"/>
+            <input type="submit" name="vetsearch" value="Search" />
         </div>
-        <br />
-        <div>
+            <br />
+        <div style="font-size:small">
             Recieving Food Stamps
             <select name="FoodStampsReportSelect">
                 <option></option>
@@ -275,84 +346,18 @@ function filterTable($query)
             </select>
             <input type="submit" name="fssearch" value="Search" />
         </div>
-        <br />
+            <br />
 
-        <div>
+        <div style="font-size:small">
             Recieving Government Assistance
             <select name="GovAssistanceReportSelect">
                 <option> </option>
                 <option> Yes </option>
                 <option> No </option>
             </select>
-            <input type="submit" name="govasstsearch" value="search"/>
+            <input type="submit" name="govasstsearch" value="Search" />
         </div>
-
-
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Last 4 SSN:</th>
-                <th>Government Assistance</th>
-                <th>Food Stamps</th>
-                <th>Office Location</th>
-                <th>Residing County</th>
-                <th>Education</th>
-                <th>Employement Status</th>
-                <th>Purpose of Visit</th>
-                <th>Veteran Status</th>
-                <th>Over 55</th>
-                <th>Between 14 and 24</th>
-            </tr>
-
-
-            <?php while($row = mysqli_fetch_array($search_result)):?>
-            <tr>
-                <td>
-                    <?php echo $row['PARTICIPANT_ID'];?>
-                </td>
-                <td>
-                    <?php echo $row['F_NAME'];?>
-                </td>
-                <td>
-                    <?php echo $row['L_NAME'];?>
-                </td>
-                <td>
-                    <?php echo $row['LAST_4_SSN'];?>
-                </td>
-                <td>
-                    <?php echo $row['GOV_ASST'];?>
-                </td>
-                <td>
-                    <?php echo $row['FOOD_STAMPS'];?>
-                </td>
-                <td>
-                    <?php echo $row['OFFICE_LOCATION'];?>
-                </td>
-                <td>
-                    <?php echo $row['COUNTY_RESIDENCE'];?>
-                </td>
-                <td>
-                    <?php echo $row['EDUCATION'];?>
-                </td>
-                <td>
-                    <?php echo $row['STATUS'];?>
-                </td>
-                <td>
-                    <?php echo $row['VISIT_PURPOSE'];?>
-                </td>
-                <td>
-                    <?php echo $row['VET_STATUS'];?>
-                </td>
-                <td><?php echo $row['OVER_55'];?> </td>
-
-                <td><?php echo $row['YOUTH_STATUS'];?> </td>
-
-                
-            </tr>
-            <?php endwhile;?>
-        </table>
+        
     </form>
 
 </body>

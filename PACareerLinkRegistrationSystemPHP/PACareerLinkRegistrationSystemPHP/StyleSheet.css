@@ -55,3 +55,27 @@ li{
 
     list-style-type: none;
 }
+
+
+div.reportTableDiv{
+   height: 300px;
+   overflow-y:scroll;
+    
+}
+
+table td{
+    font-size:small;
+    border: 1px solid #ddd;
+    padding:2px;
+
+}
+
+table th{
+    font-size:small;
+    text-align: left;
+    background-color: midnightblue;
+    color: white;
+
+}
+
+
