@@ -16,11 +16,13 @@ if(isset($_POST['login'])){
         $_SESSION['admin_login'] = $uname;
         header("Location: admin.php");
         exit();
+    } else{
+        
+        $error = "Invalid Log-In";
+
     }
-    else{
-        echo " You Have Entered Incorrect Password";
-        exit();
-    }
+        
+    
 
 }
 ?>
@@ -59,7 +61,7 @@ if(isset($_POST['login'])){
     <h3>Please sign in</h3>
 
     <div class="panel-body">
-        <?php echo $error; ?>
+        
         <form accept-charset="UTF-8" role="form" method="post" action="AdminLogIn.php">
             <fieldset>
                 <div class="form-group">
@@ -67,7 +69,9 @@ if(isset($_POST['login'])){
                 </div>
                 <div class="form-group">
                     <input class="form-control" placeholder="Password" name="password" type="password" value="" />
-                </div>
+               
+                 </div>
+              <p class="error"> <?php echo $error; ?></p>  
                 <input class="btn btn-lg btn-success btn-block" name ="login" type="submit" value="Login" />
             </fieldset>
         </form>

@@ -13,10 +13,10 @@ if(isset($_POST['createadminsubmit'])){
         $query = "INSERT INTO ADMINISTRATOR(ADMIN_USERNAME, ADMIN_PASSWORD) values('$adminuser','$adminpass')";
 
         $con ->query($query);
-     
 
+        $sucess = "Admin was sucessfully added!";
     } else{
-        
+
         $passworderr = "Mismatching Passwords. Please Re-Enter the Passwords.";
     }
 
@@ -64,7 +64,10 @@ if(isset($_POST['createadminsubmit'])){
         </div>
         <br />
         <input type="submit" name="createadminsubmit" value="Submit"/>
-
+        <br />
+        <p>
+            <?php echo $sucess; ?>
+        </p>
     </form>
 
 
