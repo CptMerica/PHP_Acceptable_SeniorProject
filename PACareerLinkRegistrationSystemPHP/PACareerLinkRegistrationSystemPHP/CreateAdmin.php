@@ -16,7 +16,8 @@ if(isset($_POST['createadminsubmit'])){
      
 
     } else{
-        echo "Unmatching passwords. Please re-enter the password";
+        
+        $passworderr = "Mismatching Passwords. Please Re-Enter the Passwords.";
     }
 
 }
@@ -59,6 +60,7 @@ if(isset($_POST['createadminsubmit'])){
             <br />
             Retype Password:
             <input type="text" name="retypeadminpass" required/>
+           <p class="error"><?php echo $passworderr; ?></p> 
         </div>
         <br />
         <input type="submit" name="createadminsubmit" value="Submit"/>

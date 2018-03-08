@@ -78,4 +78,6 @@ table th{
 
 }
 
-
+p.error{
+    color:red;
+}

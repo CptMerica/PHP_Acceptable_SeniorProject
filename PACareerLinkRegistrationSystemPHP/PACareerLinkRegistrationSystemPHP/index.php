@@ -1,21 +1,27 @@
 <?php
-$error = "";
-if(isset($_POST['username'],$_POST['password'])){
+include 'databaseConnection.php';
 
-    $user = array(
-                    "user" => "Username",
-                    "pass"=>"Password"
-            );
-    $uname = $_POST['username'];
-    $pass = $_POST['password'];
-    if($uname == $user['user'] && $pass == $user['pass']){
+if(isset($_POST['login'])){
+
+    $uname=$_POST['user'];
+    $password=$_POST['pass'];
+
+    $query="select * from CENTER_USER where CENTER_USER_USERNAME='".$uname."'AND CENTER_USER_PASSWORD='".$password."' limit 1";
+
+    $result=mysqli_query($con,$query);
+
+    if(mysqli_num_rows($result)==1){
+
         session_start();
-        $_SESSION['simple_login'] = $uname;
+        $_SESSION['center_user_login'] = $uname;
         header("Location: home.php");
         exit();
-    }else{
-        $error = '<div class="alert alert-danger">Invalid Login</div>';
     }
+    else{
+         echo " You Have Entered Incorrect Password";
+        exit();
+    }
+
 }
 ?>
 <!DOCTYPE html>
@@ -34,18 +40,21 @@ if(isset($_POST['username'],$_POST['password'])){
   <h3 >Please sign in</h3>
                     
    <div class="panel-body">
-      <?php echo $error; ?>
+      
      <form accept-charset="UTF-8" role="form" method="post" action="index.php">
            <fieldset>
              <div class="form-group">
-                 <input class="form-control" placeholder="Username" name="username" type="text" />
+                 <input class="form-control" placeholder="Username" name="user" type="text" />
             </div>
             <div class="form-group">
-                <input class="form-control" placeholder="Password" name="password" type="password" value="" />
-           </div>
-                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" />
+                <input class="form-control" placeholder="Password" name="pass" type="password" />
+                <p  <?php echo $lognerr; ?> for logging in.
+                </p>
+            </div>
+                <input class="btn btn-lg btn-success btn-block" type="submit" name="login" value="Login" />
            </fieldset>
       </form>
+    
 </div>
                 
           
