@@ -1,10 +1,10 @@
 <?php
 $hostname = "www.scwdbpacl.com";
-$username="terhorst";
+$uname="terhorst";
 $password="password";
 $dbname="paclregdb";
 
-$con = mysqli_connect($hostname, $username, $password, $dbname);
+$con = mysqli_connect($hostname, $uname, $password, $dbname);
 
 if(mysqli_connect_errno()){
     echo mysqli_connect_error();

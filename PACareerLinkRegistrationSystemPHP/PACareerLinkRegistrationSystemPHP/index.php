@@ -6,11 +6,11 @@ if(isset($_POST['username'],$_POST['password'])){
                     "user" => "Username",
                     "pass"=>"Password"
             );
-    $username = $_POST['username'];
+    $uname = $_POST['username'];
     $pass = $_POST['password'];
-    if($username == $user['user'] && $pass == $user['pass']){
+    if($uname == $user['user'] && $pass == $user['pass']){
         session_start();
-        $_SESSION['simple_login'] = $username;
+        $_SESSION['simple_login'] = $uname;
         header("Location: home.php");
         exit();
     }else{

@@ -1,29 +1,34 @@
 <?php
-$error = "";
-if(isset($_POST['username'],$_POST['password'])){
+include 'databaseConnection.php';
 
-   
-    $adminuser = array(
-                    "user" => "Admin",
-                    "pass"=>"adminpass"
-            );
-    $username = $_POST['username'];
-    $pass = $_POST['password'];
-    if($username == $adminuser['user'] && $pass == $adminuser['pass']){
+if(isset($_POST['login'])){
+
+    $uname=$_POST['username'];
+    $password=$_POST['password'];
+
+    $query="select * from ADMINISTRATOR where ADMIN_USERNAME='".$uname."'AND ADMIN_PASSWORD='".$password."' limit 1";
+
+    $result=mysqli_query($con,$query);
+
+    if(mysqli_num_rows($result)==1){
+
         session_start();
-        $_SESSION['admin_login'] = $username;
+        $_SESSION['admin_login'] = $uname;
         header("Location: admin.php");
         exit();
-    }else{
-        $error = '<div class="alert alert-danger">Invalid Login</div>';
     }
+    else{
+        echo " You Have Entered Incorrect Password";
+        exit();
+    }
+
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Admin Log-In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
@@ -63,7 +68,7 @@ if(isset($_POST['username'],$_POST['password'])){
                 <div class="form-group">
                     <input class="form-control" placeholder="Password" name="password" type="password" value="" />
                 </div>
-                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" />
+                <input class="btn btn-lg btn-success btn-block" name ="login" type="submit" value="Login" />
             </fieldset>
         </form>
     </div>
