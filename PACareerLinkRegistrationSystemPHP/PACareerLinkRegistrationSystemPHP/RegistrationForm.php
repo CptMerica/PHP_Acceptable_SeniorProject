@@ -75,24 +75,31 @@
         </select>
 
         <p>Purpose of Visit:</p>
+        <div style="font-size:12px">
+            <p><input type="checkbox" value="apprenticeInfo" />Apprenticeship Information</p>
+            <p><input type="checkbox" value="earn"/>EARN</p>
+            <p><input type="checkbox" value="eduTraining"/>Education and Training</p>
+            <p><input type="checkbox" value="empRecruit"/>Employer Recruitment</p>
+            <p><input type="checkbox" value="empTest"/>Employment Testing</p>
+            <p><input type="checkbox" value="gedAdult"/>GED/Adult Remediation</p>
+            <p><input type="checkbox" value="jobgateway" />JobGateway Enrollment</p>
+            <p><input type="checkbox" value="jobOrder"/>Job Order Listing</p>
+            <p><input type="checkbox" value="jobSearch"/>Job Search/Application</p>
+            <p><input type="checkbox" value="ovr"/>OVR</p>
+            <p><input type="checkbox" value="prepclass"/>Prep Class</p>
+            <p><input type="checkbox" value="schedapt"/>Scheduled Appointment</p>
+            <p><input type="checkbox" value="uchotline"/> UC Hotline</p>
+            <p><input type="checkbox" value="workshop"/>Workshop</p> 
+        </div>
         
+
+
 
         <select name="ReasonSelect" required>
             <option> </option>
-            <option value="ApprenticeInfo"> Apprenticeship Information </option>
-            <option value="Earn"> EARN </option>
-            <option value="Education_Training"> Education and Training </option>
-            <option value="EmpRecruit"> Employer Recruitment </option>
-            <option value="EmpTrain"> Employment Testing </option>
-            <option value="GED_Adult"> GED/Adult Remediation </option>
-            <option value="JobGatewayEnroll"> JobGateway Enrollment </option>
-            <option value="JobOrder"> Job Order Listing </option>
-            <option value="JobSearch"> Job Search/Application </option>
-            <option value="OVR"> OVR </option>
-            <option value="PrepClass"> Prep Class </option>
-            <option value="SchedApt"> Scheduled Appointment </option>
-            <option value="UCHotline"> UC Hotline </option>
-            <option value="Workshop"> Workshop </option>       
+
+      
+   
         </select>
                 
        <br />
