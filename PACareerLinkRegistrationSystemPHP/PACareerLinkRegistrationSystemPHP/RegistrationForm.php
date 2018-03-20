@@ -184,7 +184,7 @@ if(isset($_POST['submit'])){
     }
 
     
-    header("location:registrationthanks.php"); 
+    header('location:registrationthanks.php'); 
     
 }
 

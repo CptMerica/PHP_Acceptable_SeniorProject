@@ -3,8 +3,8 @@
 <head>
     <title> Reports Page</title>
     <meta charset="utf-8" />
-
     <link href="StyleSheet.css" rel="stylesheet" />
+    
 </head>
 <body>
     <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />

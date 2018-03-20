@@ -79,6 +79,7 @@ echo "0 results";
     <input type="button" onclick="window.location = 'populateInfo.php'" class="Redirect" value="Update" />
 
 </body>
+ 
 </html>
 
 
