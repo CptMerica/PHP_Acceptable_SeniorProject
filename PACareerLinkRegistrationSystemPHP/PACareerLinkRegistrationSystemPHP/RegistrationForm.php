@@ -1,3 +1,97 @@
+<?php 
+
+require_once('databaseConnection.php');
+
+//email template
+$to = 'kig6911@calu.edu';
+$subject = "There is a visitor waiting for you in the lobby!";
+
+$htmlContent = '
+    <html>
+    <head>
+        <title> New visitor notification</title>
+    </head>
+    <body>
+        <h3> Mon-Valley Center Training group, </h3>
+        <h3> There is a new visitor in the waiting room.Below is their information. </h3>
+       <h3>vPlease assist them as soon as possible. Thank you!</h3>
+        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
+            <tr>
+                <th>Name:</th>
+                <td>Visitor Name</td>
+            </tr>
+            <tr style="background-color: #e0e0e0;">
+                <th>Type of visitor </th>
+                <td> New</td>
+            </tr>
+            <tr>
+                <th>Reason for visit: </th>
+                <td> Vistor reason for visit</td>
+            </tr>
+        </table>
+    </body>
+</html>';
+
+
+
+
+// Send email
+if(mail($to,$subject,$htmlContent)):
+    $successMsg = 'Email has sent successfully.';
+else:
+    $errorMsg = 'Email sending fail.';
+endif;
+
+
+
+
+if(isset($_POST['submit'])){
+    $first_name = $_POST['fname'];
+    $last_name = $_POST['lname'];
+    $last4ssn = $_POST['ssnumber'];
+    $education = $_POST["EducationSelect"];
+    $employment = $_POST["EmploymentSelect"];
+    $residence = $_POST["CountySelect"];
+    $office = $_POST["LocationSelect"];
+    $visit = $_POST["ReasonSelect"];
+    $vet = $_POST['VetSelect'];
+    $over55 = $_POST['Over55Select'];
+    $youth14to24 = $_POST['14to24Select'];
+    $govtasst = $_POST['GovAssistanceSelect'];
+    $foodstamps = $_POST['FoodStampsSelect'];
+
+
+    if (ctype_digit(str_replace(' ', '', $last4ssn)) === false) {
+        
+        $error = 'SSN must contain numbers only';
+    }
+
+    else{
+        
+        $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,GOV_ASST,FOOD_STAMPS,OFFICE_LOCATION,COUNTY_RESIDENCE,EDUCATION,STATUS,VISIT_PURPOSE,OVER_55,VET_STATUS,YOUTH_STATUS) VALUES('$first_name','$last_name','$last4ssn', '$govtasst' ,'$foodstamps' ,'$office' ,'$residence', '$education','$employment','$visit', '$over55', '$vet', '$youth14to24')";
+        $con ->query($sql);
+
+        if($con ->error){
+            echo $con->error;
+        }else{
+            echo 'Insert Successful';
+        }
+        
+        
+    }
+
+    
+
+    
+
+
+    
+}
+
+?>
+
+
+
 
 <head>
     <title> Welcome to Registration</title>
@@ -26,9 +120,9 @@
     <p> Please Complete the form below to register. </p>        
     <form action="registrationForm.php" method="post">
 
-        <p>First Name:<input name="fname" type="text" required/> </p>
-        <p>Last Name: <input name="lname" type="text" required /></p>
-        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" required /></p>
+        <p>First Name:<input name="fname" type="text" style="text-transform: capitalize;" required/> </p>
+        <p>Last Name: <input name="lname" type="text" style="text-transform: capitalize;" required /></p>
+        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" maxlength="4" min="4" required /><?php echo $error; ?></p>
         <br />
 
         <p>Education: </p>
@@ -37,9 +131,9 @@
             <option value="None"> None</option>
             <option value="GED"> GED </option>
             <option value="High School Diploma"> High School Diploma </option>
-            <option value="Associate Degress"> Associate Degree </option>
-            <option value="Bachelor Degree"> Bachelor Degree </option>
-            <option value="Master Degree"> Master Degree</option>
+            <option value="Associates Degree"> Associate's Degree </option>
+            <option value="Bachelors Degree"> Bachelor's Degree </option>
+            <option value="Masters Degree"> Master's Degree</option>
             <option value="Doctorate Degree"> Doctorate Degreee </option>
         </select>
 
@@ -75,32 +169,26 @@
         </select>
 
         <p>Purpose of Visit:</p>
-        <div style="font-size:12px">
-            <p><input type="checkbox" value="apprenticeInfo" />Apprenticeship Information</p>
-            <p><input type="checkbox" value="earn"/>EARN</p>
-            <p><input type="checkbox" value="eduTraining"/>Education and Training</p>
-            <p><input type="checkbox" value="empRecruit"/>Employer Recruitment</p>
-            <p><input type="checkbox" value="empTest"/>Employment Testing</p>
-            <p><input type="checkbox" value="gedAdult"/>GED/Adult Remediation</p>
-            <p><input type="checkbox" value="jobgateway" />JobGateway Enrollment</p>
-            <p><input type="checkbox" value="jobOrder"/>Job Order Listing</p>
-            <p><input type="checkbox" value="jobSearch"/>Job Search/Application</p>
-            <p><input type="checkbox" value="ovr"/>OVR</p>
-            <p><input type="checkbox" value="prepclass"/>Prep Class</p>
-            <p><input type="checkbox" value="schedapt"/>Scheduled Appointment</p>
-            <p><input type="checkbox" value="uchotline"/> UC Hotline</p>
-            <p><input type="checkbox" value="workshop"/>Workshop</p> 
-        </div>
-        
 
-
-
-       <!-- <select name="ReasonSelect" required>
-            <option> </option> -->
-
-      
-   
+        <select name="ReasonSelect" required>
+            <option> </option>
+            <option value="Apprentice Information"> Apprenticeship Information </option>
+            <option value="EARN"> EARN </option>
+            <option value="Education Training"> Education and Training </option>
+            <option value="Employer Recruitment"> Employer Recruitment </option>
+            <option value="Employment Testing"> Employment Testing </option>
+            <option value="GED/Adult Remediation"> GED/Adult Remediation </option>
+            <option value="JobGateway Enrollment"> JobGateway Enrollment </option>
+            <option value="Job Order Listing"> Job Order Listing </option>
+            <option value="Job Search/Application"> Job Search/Application </option>
+            <option value="OVR"> OVR </option>
+            <option value="Prep Class"> Prep Class </option>
+            <option value="Scheduled Appointment"> Scheduled Appointment </option>
+            <option value="UC Hotline"> UC Hotline </option>
+            <option value="Workshop"> Workshop </option>
         </select>
+
+
                 
        <br />
 
@@ -153,81 +241,4 @@
 </body>
 
 
-<?php 
-
-require_once('databaseConnection.php');
-
-//email template
-$to = 'kig6911@calu.edu';
-$subject = "There is a visitor waiting for you in the lobby!";
-
-$htmlContent = '
-    <html>
-    <head>
-        <title> New visitor notification</title>
-    </head>
-    <body>
-        <h3> Mon-Valley Center Training group, </h3>
-        <h3> There is a new visitor in the waiting room.Below is their information. </h3>
-       <h3>vPlease assist them as soon as possible. Thank you!</h3>
-        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
-            <tr>
-                <th>Name:</th>
-                <td>Visitor Name</td>
-            </tr>
-            <tr style="background-color: #e0e0e0;">
-                <th>Type of visitor </th>
-                <td> New</td>
-            </tr>
-            <tr>
-                <th>Reason for visit: </th>
-                <td> Vistor reason for visit</td>
-            </tr>
-        </table>
-    </body>
-</html>';
-
-
-
-
-// Send email
-if(mail($to,$subject,$htmlContent)):
-    $successMsg = 'Email has sent successfully.';
-else:
-    $errorMsg = 'Email sending fail.';
-endif;
-
-
-if(isset($_POST['submit'])){
-    $first_name = $_POST['fname'];
-    $last_name = $_POST['lname'];
-    $last4ssn = $_POST['ssnumber'];
-    $education = $_POST["EducationSelect"];
-    $employment = $_POST["EmploymentSelect"];
-    $residence = $_POST["CountySelect"];
-    $office = $_POST["LocationSelect"];
-    $visit = $_POST["ReasonSelect"];
-    $vet = $_POST['VetSelect'];
-    $over55 = $_POST['Over55Select'];
-    $youth14to24 = $_POST['14to24Select'];
-    $govtasst = $_POST['GovAssistanceSelect'];
-    $foodstamps = $_POST['FoodStampsSelect'];
-
-    $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,GOV_ASST,FOOD_STAMPS,OFFICE_LOCATION,COUNTY_RESIDENCE,EDUCATION,STATUS,VISIT_PURPOSE,OVER_55,VET_STATUS,YOUTH_STATUS) VALUES('$first_name','$last_name','$last4ssn', '$govtasst' ,'$foodstamps' ,'$office' ,'$residence', '$education','$employment','$visit', '$over55', '$vet', '$youth14to24')";
-
-    $con ->query($sql);
-
-    if($con ->error){
-        echo $con->error;
-    }else{
-        echo 'Insert Successful';
-    }
-
-    
-
-
-    
-}
-
-?>
 
