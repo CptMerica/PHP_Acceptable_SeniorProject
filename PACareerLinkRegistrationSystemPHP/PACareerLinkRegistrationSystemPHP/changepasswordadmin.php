@@ -1,32 +1,31 @@
 <?php
-
 include 'databaseConnection.php';
 
-if(isset($_POST['createadminsubmit'])){
+if(isset($_POST['changeadminsubmit'])){
 
     $adminuser =$_POST['adminuser'];
-    $adminpass = $_POST['adminpass'];
-    $adminpassretype = $_POST['retypeadminpass'];
+    $adminpass = $_POST['changeadminpass'];
+    $adminpassretype = $_POST['changeretypeadminpass'];
 
     if($adminpass == $adminpassretype){
 
-        $query = "INSERT INTO ADMINISTRATOR(ADMIN_USERNAME, ADMIN_PASSWORD) values('$adminuser','$adminpass')";
+        $query = "ALTER table ADMINISTRATOR where ADMIN_USERNAME = '".$adminuser."' AND ADMIN_PASSWORD = '".$adminpass."'";
 
         $con ->query($query);
 
-        $sucess = "Admin was sucessfully added!";
-    } else{
+        $sucess = "Password sucessfully changed!";
+
+    } else {
 
         $passworderr = "Mismatching Passwords. Please Re-Enter the Passwords.";
     }
 
 }
-
 ?>
 
 <html>
 <head>
-    <title>Admin Creator</title>
+    <title>Admin Password Reset</title>
     <link href="styleSheet.css" rel="stylesheet" />
 </head>
 
@@ -46,28 +45,31 @@ if(isset($_POST['createadminsubmit'])){
 
     </ul>
 
-    <p>Please Fill out the Form below to create a new admin.</p>
+    <p>Please Fill out the Form below to reset an Admin account password.</p>
 
     <form method="post">
         <div style="font-size:small">
             Admin Username:
-            <input type="text" name="adminuser" required/>
+            <input type="text" name="adminuser" required />
             <br />
             <br />
             Admin Password:
-            <input type="text" name="adminpass" required/>
+            <input type="text" name="changeadminpass" required />
             <br />
             <br />
             Retype Password:
-            <input type="text" name="retypeadminpass" required/>
-           <p class="error"><?php echo $passworderr; ?></p> 
+            <input type="text" name="changeretypeadminpass" required />
+            <p class="error">
+                <?php echo $passworderr; ?>
+            </p>
         </div>
         <br />
-        <input type="submit" name="createadminsubmit" value="Submit"/>
+        <input type="submit" name="changeadminsubmit" value="Submit" />
         <br />
         <p>
             <?php echo $sucess; ?>
         </p>
+
     </form>
 
 

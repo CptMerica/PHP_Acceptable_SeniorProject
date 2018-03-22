@@ -44,6 +44,7 @@ if(!isset($_SESSION['admin_login'])){
     <p align="center">
         <input type="button" onclick="window.location = 'Reports.php'" class="Redirect" value="Create Reports" />
         <input type="button" onclick="window.location = 'CreateAdmin.php'" class="Redirect" value="Create Admin"/>
+        <input type="button" onclick="window.location='deleteadmin.php'" calss="Redirect" value="Delete Admin"/>
         <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="LOG OUT" />
     </p>
 

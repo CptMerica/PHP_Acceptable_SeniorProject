@@ -24,6 +24,7 @@
     <Compile Include="adminLogOut.php" />
     <Compile Include="CreateAdmin.php" />
     <Compile Include="databaseConnection.php" />
+    <Compile Include="deleteadmin.php" />
     <Compile Include="Edit.php" />
     <Compile Include="emailtemplate.php" />
     <Compile Include="populateInfo2.php" />

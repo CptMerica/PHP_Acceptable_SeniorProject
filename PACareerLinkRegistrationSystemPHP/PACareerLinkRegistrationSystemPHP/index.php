@@ -18,8 +18,8 @@ if(isset($_POST['login'])){
         exit();
     }
     else{
-         echo " You Have Entered Incorrect Password";
-        exit();
+         $loginerr = "Invalid Log-In";
+        
     }
 
 }
@@ -48,8 +48,7 @@ if(isset($_POST['login'])){
             </div>
             <div class="form-group">
                 <input class="form-control" placeholder="Password" name="pass" type="password" />
-                <p  <?php echo $lognerr; ?> for logging in.
-                </p>
+               <p class="error"><?php echo $loginerr; ?></p> 
             </div>
                 <input class="btn btn-lg btn-success btn-block" type="submit" name="login" value="Login" />
            </fieldset>

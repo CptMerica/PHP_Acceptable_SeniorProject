@@ -63,7 +63,16 @@ if(isset($_POST['fnamesearch']))
     $search_result = filterTable($query);
 
 
-} else if (isset($_POST['55search'])){
+} else if(isset($_POST['vreasonsearch'])){
+ 
+    $vreasontosearch = $_POST['ReasonSelect'];
+
+    $query = "SELECT * FROM WORKER WHERE VISIT_PURPOSE = '".$vreasontosearch."'";
+
+    $search_result = filterTable($query);
+    
+
+}else if (isset($_POST['55search'])){
 
     $over55ToSearch = $_POST['Over55ReportSelect'];
 
@@ -252,10 +261,10 @@ function resetTable(){
             Site Location:
             <select name="OfficeLocationReportSelect">
                 <option> </option>
-                <option> Beaver </option>
-                <option> Washington </option>
-                <option> Mon Valley </option>
-                <option> Greene </option>
+                <option value="Mon Valley"> Mon Valley </option>
+                <option value="Washington"> Washington </option>
+                <option value="Beaver"> Beaver </option>
+                <option value="Greene"> Greene </option>
             </select>
             <input type="submit" name="locationsearch" value="Search" />
         </div>
@@ -265,13 +274,13 @@ function resetTable(){
             Education:
             <select name="EducationReportSelect">
                 <option> </option>
-                <option> High School Diploma </option>
-                <option> Associate Degree </option>
-                <option> Bachelor </option>
-                <option> Master </option>
-                <option> Doctorate </option>
-                <option> GED </option>
-                <option> None </option>
+                <option value="None"> None</option>
+                <option value="GED"> GED </option>
+                <option value="High School Diploma"> High School Diploma </option>
+                <option value="Associates Degree"> Associate's Degree </option>
+                <option value="Bachelors Degree"> Bachelor's Degree </option>
+                <option value="Masters Degree"> Master's Degree</option>
+                <option value="Doctorate Degree"> Doctorate Degreee </option>
             </select>
             <input type="submit" name="EDUsearch" value="Search" />
         </div>
@@ -281,20 +290,21 @@ function resetTable(){
             County of Residence:
             <select name="CountyReportSelect">
                 <option> </option>
-                <option> Washington </option>
-                <option> Fayette </option>
-                <option> Westmoreland </option>
-                <option> Allegheny </option>
-                <option> Indiana </option>
-                <option> Beaver </option>
-                <option>Butler</option>
-                <option> Greene </option>
+                <option value="Washington"> Washington </option>
+                <option value="Fayette"> Fayette </option>
+                <option value="Westmoreland"> Westmoreland </option>
+                <option value="Allegheny"> Allegheny </option>
+                <option value="Indiana"> Indiana </option>
+                <option value="Beaver"> Beaver </option>
+                <option value="Butler"> Butler </option>
+                <option value="Greene"> Greene </option>
+                <option value="Other"> Other </option>
             </select>
             <input type="submit" name="countysearch" value="Search" />
         </div>
             <br>
         <div style="font-size:small">
-            Employement Status:
+            Employment Status:
             <select name="EmploymentReportSelect">
                 <option> </option>
                 <option> Unemployed </option>
@@ -304,9 +314,31 @@ function resetTable(){
             <input type="submit" name="empstatussearch" value="Search" />
         </div>
             <br />
-
         <div style="font-size:small">
-            People over 55
+            Visit Reason:
+            <select name="ReasonSelect">
+                <option> </option>
+                <option value="Apprentice Information"> Apprenticeship Information </option>
+                <option value="EARN"> EARN </option>
+                <option value="Education Training"> Education and Training </option>
+                <option value="Employer Recruitment"> Employer Recruitment </option>
+                <option value="Employment Testing"> Employment Testing </option>
+                <option value="GED/Adult Remediation"> GED/Adult Remediation </option>
+                <option value="JobGateway Enrollment"> JobGateway Enrollment </option>
+                <option value="Job Order Listing"> Job Order Listing </option>
+                <option value="Job Search/Application"> Job Search/Application </option>
+                <option value="OVR"> OVR </option>
+                <option value="Prep Class"> Prep Class </option>
+                <option value="Scheduled Appointment"> Scheduled Appointment </option>
+                <option value="UC Hotline"> UC Hotline </option>
+                <option value="Workshop"> Workshop </option>
+            </select>
+            <input type="submit" name="vreasonsearch" value="Search" />
+        </div>
+
+        <br />
+        <div style="font-size:small">
+            People over 55:
             <select name="Over55ReportSelect">
                 <option></option>
                 <option> Yes </option>
@@ -317,7 +349,7 @@ function resetTable(){
             <br />
 
         <div style="font-size:small">
-            Between 14 and 24
+            People between 14 and 24:
             <select name="YouthReportSelect">
                 <option></option>
                 <option> Yes </option>
@@ -328,7 +360,7 @@ function resetTable(){
             <br />
 
         <div style="font-size:small">
-            Veteran
+            Veteran Status:
             <select name="VetReportSelect">
                 <option></option>
                 <option> Yes </option>
@@ -338,7 +370,7 @@ function resetTable(){
         </div>
             <br />
         <div style="font-size:small">
-            Recieving Food Stamps
+            Recieving Food Stamps:
             <select name="FoodStampsReportSelect">
                 <option></option>
                 <option> Yes </option>
@@ -349,7 +381,7 @@ function resetTable(){
             <br />
 
         <div style="font-size:small">
-            Recieving Government Assistance
+            Recieving Government Assistance:
             <select name="GovAssistanceReportSelect">
                 <option> </option>
                 <option> Yes </option>
