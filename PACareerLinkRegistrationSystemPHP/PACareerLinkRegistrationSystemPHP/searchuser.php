@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,19 +28,23 @@
 
         <h2> Search User Form</h2>
         <p> Please Complete the form below to search for your profile. </p>
-        <form method="post">
+        <form action="populateInfo.php" id="populate" method="post" name="populate">
             <class:registration>
+                
+                    <p>
+                     
+                        Last 4 of Social Security Number:
+                        <input name="search" type="text" />
+                    </p>
+                    <br />
 
-                <p>First Name:<input name="fname" type="text" /> </p>
-                <p>Last Name: <input name="lname" type="text" /></p>
-                <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" /></p>
-                <br />
+                    <br />
 
-                <br />
+                    <input id='btn' name="submit" type='submit' value='Search'>
 
-                <input type="submit" name="submit" value="Search" />
+              
 
-        </form>
+                </form>
 
 
 
@@ -43,45 +52,5 @@
 
 </body>
 </html>
-
-<?php
-require_once('databaseConnection.php');
-if(isset ($_POST{'submit'}))
-{
-$first_name = $_POST['fname'];
-$last_name = $_POST['lname'];
-$last4ssn = $_POST['ssnumber'];
-$query="SELECT F_NAME, L_NAME, LAST_4_SSN FROM WORKER WHERE LAST_4_SSN = '".$last4ssn."'";
-$result = $con->query($query);
-if ($result->num_rows > 0) {
-    echo "<table><tr><th>First Name</th><th>Last Name</th><th>LAST 4 SSN</th></tr>";
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>".$row["F_NAME"]."</td><td>".$row["L_NAME"]."</td><td>".$row["LAST_4_SSN"]."</td></tr>";
-}
-echo "</table>";
-}
-else
-{
-echo "0 results";
-}
-}
-
-?>
-
-<html>
-
-<head>
-    
-    </head>
-<body>
-    <br />
-    <input type="button" onclick="window.location = 'populateInfo.php'" class="Redirect" value="Update" />
-
-</body>
- 
-</html>
-
-
 
 
