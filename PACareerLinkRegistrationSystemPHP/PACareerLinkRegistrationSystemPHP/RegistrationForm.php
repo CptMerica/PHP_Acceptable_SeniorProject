@@ -3,48 +3,15 @@
 require_once('databaseConnection.php');
 
 //email template
-$to = 'kig6911@calu.edu';
-$subject = "There is a visitor waiting for you in the lobby!";
-
-$htmlContent = '
-    <html>
-    <head>
-        <title> New visitor notification</title>
-    </head>
-    <body>
-        <h3> Mon-Valley Center Training group, </h3>
-        <h3> There is a new visitor in the waiting room.Below is their information. </h3>
-       <h3>vPlease assist them as soon as possible. Thank you!</h3>
-        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
-            <tr>
-                <th>Name:</th>
-                <td>Visitor Name</td>
-            </tr>
-            <tr style="background-color: #e0e0e0;">
-                <th>Type of visitor </th>
-                <td> New</td>
-            </tr>
-            <tr>
-                <th>Reason for visit: </th>
-                <td> Vistor reason for visit</td>
-            </tr>
-        </table>
-    </body>
-</html>';
-
-
-
+$msg = "There is a new visitor in the waiting room. Please assist them as soon as possible." ;
+$msg = wordwrap($msg,70);
 
 // Send email
-if(mail($to,$subject,$htmlContent)):
-    $successMsg = 'Email has sent successfully.';
-else:
-    $errorMsg = 'Email sending fail.';
-endif;
+mail("celticmania09@hotmail.com","SeniorPorject",$msg);
 
+?>
 
-
-
+<?php
 if(isset($_POST['submit'])){
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
