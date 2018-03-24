@@ -13,6 +13,7 @@ mail("celticmania09@hotmail.com","SeniorPorject",$msg);
 
 <?php
 if(isset($_POST['submit'])){
+    $barcode = $_POST['scancard'];
     $first_name = $_POST['fname'];
     $last_name = $_POST['lname'];
     $last4ssn = $_POST['ssnumber'];
@@ -35,13 +36,14 @@ if(isset($_POST['submit'])){
 
     else{
         
-        $sql = "INSERT INTO WORKER(F_NAME,L_NAME,LAST_4_SSN,GOV_ASST,FOOD_STAMPS,OFFICE_LOCATION,COUNTY_RESIDENCE,EDUCATION,STATUS,VISIT_PURPOSE,OVER_55,VET_STATUS,YOUTH_STATUS) VALUES('$first_name','$last_name','$last4ssn', '$govtasst' ,'$foodstamps' ,'$office' ,'$residence', '$education','$employment','$visit', '$over55', '$vet', '$youth14to24')";
+        $sql = "INSERT INTO VISITOR(BARCODE_NUM,F_NAME,L_NAME,LAST_4_SSN,COUNTY_RESIDENCE,EDU_STATUS,EMP_STATUS,VET_STATUS,YOUTH_STATUS,FOOD_STAMPS,GOVT_ASST, OVER_55) VALUES('$barcode','$first_name','$last_name','$last4ssn', '$residence' ,'$education' ,'$employment' ,'$vet', '$youth14to24','$foodstamps','$govtasst', '$over55')";
         $con ->query($sql);
 
         if($con ->error){
             echo $con->error;
         }else{
-            echo 'Insert Successful';
+            echo 'Insert Sucessful';
+            header('Location: returnvisitor.php');
         }
         
         
@@ -87,6 +89,10 @@ if(isset($_POST['submit'])){
     <p> Please Complete the form below to register. </p>        
     <form action="registrationForm.php" method="post">
 
+
+        <p>Click inside of the SCAN CARD box and then scan your card.</p>
+        <p>Your Card number will appear if scanned correctly.</p>
+        <p>SCAN CARD: <input name="scancard" type="text" required/></p>
         <p>First Name:<input name="fname" type="text" style="text-transform: capitalize;" required/> </p>
         <p>Last Name: <input name="lname" type="text" style="text-transform: capitalize;" required /></p>
         <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" maxlength="4" min="4" required /><?php echo $error; ?></p>
@@ -125,38 +131,6 @@ if(isset($_POST['submit'])){
             <option value="Employed"> Employed </option>
             <option value="Dislocated"> Dislocated</option>
         </select>
-
-        <p>Office Location:</p>
-        <select name="LocationSelect" required>
-            <option> </option>
-            <option value="Mon Valley"> Mon Valley </option>
-            <option value="Washington"> Washington </option>
-            <option value="Beaver"> Beaver </option>
-            <option value="Greene"> Greene </option>
-        </select>
-
-        <p>Purpose of Visit:</p>
-
-        <select name="ReasonSelect" required>
-            <option> </option>
-            <option value="Apprentice Information"> Apprenticeship Information </option>
-            <option value="EARN"> EARN </option>
-            <option value="Education Training"> Education and Training </option>
-            <option value="Employer Recruitment"> Employer Recruitment </option>
-            <option value="Employment Testing"> Employment Testing </option>
-            <option value="GED/Adult Remediation"> GED/Adult Remediation </option>
-            <option value="JobGateway Enrollment"> JobGateway Enrollment </option>
-            <option value="Job Order Listing"> Job Order Listing </option>
-            <option value="Job Search/Application"> Job Search/Application </option>
-            <option value="OVR"> OVR </option>
-            <option value="Prep Class"> Prep Class </option>
-            <option value="Scheduled Appointment"> Scheduled Appointment </option>
-            <option value="UC Hotline"> UC Hotline </option>
-            <option value="Workshop"> Workshop </option>
-        </select>
-
-
-                
        <br />
 
         <p>Are you a veteran? </p>
