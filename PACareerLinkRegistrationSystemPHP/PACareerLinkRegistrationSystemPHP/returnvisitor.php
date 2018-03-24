@@ -22,15 +22,15 @@
                 <li style="float:right"><a>Help</a></li>
             </ul>
         </div>
-        <p align="center">Sign In</p>    
-
-        <form method="post" action="registrationthanks.php">
-     
-            <p>Click inside of the SCAN CARD box and then scan your card.</p>
-            <p>Your Card number will appear if scanned correctly.</p>
-            <p>SCAN CARD: <input name="scancard" type="text" required /></p>
+ 
+        <p style="font-size:20px;">Sign In</p>
+                  
+    <form method="post" action="registrationthanks.php">
+        <p>Click inside the "SCAN CARD" box and scan your card.</p>
+        <p>Your Visitor Code will appear inside the box if scanned correctly.</p>
+        <p style="font-size:14px;">SCAN CARD: <input name="scancard" type="text" required /></p>
+        <br />
             <p>Please select the PA Career Link office you are currently at. </p>
-            <p>Office Location:</p>
             <select name="LocationSelect" required>
                 <option> </option>
                 <option value="Mon Valley"> Mon Valley </option>
@@ -39,7 +39,7 @@
                 <option value="Greene"> Greene </option>
             </select>
             <br />
-            <p>Please select the primary reason for your visit today.</p>
+            <p >Please select the primary reason for your visit today.</p>
             <select name="ReasonSelect" required>
                 <option> </option>
                 <option value="Apprentice Information"> Apprenticeship Information </option>
@@ -58,11 +58,8 @@
                 <option value="Workshop"> Workshop </option>
             </select>
             <br />
+            <br />
             <input type="submit" name="submit" />
-               
-
-           
-
         </form>
   
 

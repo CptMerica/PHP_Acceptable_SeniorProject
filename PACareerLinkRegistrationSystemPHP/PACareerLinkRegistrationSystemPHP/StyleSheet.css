@@ -63,7 +63,12 @@ div.reportTableDiv{
     
 }
 
+
+
+
+
 table td{
+    width : 1000px;
     font-size:small;
     border: 1px solid #ddd;
     padding:2px;

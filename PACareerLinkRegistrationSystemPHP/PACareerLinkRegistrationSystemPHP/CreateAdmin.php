@@ -14,10 +14,10 @@ if(isset($_POST['createadminsubmit'])){
 
         $con ->query($query);
 
-        $sucess = "Admin was sucessfully added!";
+        $sucess = "Admin was sucessfully created!";
     } else{
 
-        $passworderr = "Mismatching Passwords. Please Re-Enter the Passwords.";
+        $passworderr = "Mismatching Passwords. Please Re-Enter the passwords.";
     }
 
 }
@@ -55,11 +55,11 @@ if(isset($_POST['createadminsubmit'])){
             <br />
             <br />
             Admin Password:
-            <input type="text" name="adminpass" required/>
+            <input type="password" name="adminpass" required/>
             <br />
             <br />
             Retype Password:
-            <input type="text" name="retypeadminpass" required/>
+            <input type="password" name="retypeadminpass" required/>
            <p class="error"><?php echo $passworderr; ?></p> 
         </div>
         <br />

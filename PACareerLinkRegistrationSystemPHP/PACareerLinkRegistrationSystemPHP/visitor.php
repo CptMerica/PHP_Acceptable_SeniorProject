@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <h2>Sign In</h2>
+        <h2>Welcome to the PA Career Link Center!</h2>
         <form method="post">
             <class:registration align="center">
                 <br />

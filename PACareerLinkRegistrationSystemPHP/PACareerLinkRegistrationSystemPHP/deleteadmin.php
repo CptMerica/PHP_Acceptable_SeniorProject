@@ -53,11 +53,11 @@ if(isset($_POST['deleteadminsubmit'])){
             <br />
             <br />
             Admin Password:
-            <input type="text" name="deleteadminpass" required />
+            <input type="password" name="deleteadminpass" required />
             <br />
             <br />
             Retype Password:
-            <input type="text" name="deleteretypeadminpass" required />
+            <input type="password" name="deleteretypeadminpass" required />
             <p class="error">
                 <?php echo $passworderr; ?>
             </p>

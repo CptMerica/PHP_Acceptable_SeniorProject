@@ -1,48 +1,36 @@
 <?php
 
-            require 'databaseConnection.php';
 
-            $barcode=$_POST['scancard'];
-            $visitreason =$_POST['ReasonSelect'];
-            $office = $_POST['LocationSelect'];
-            if(isset($_POST['submit'])){
-
-                $query="SELECT * FROM VISITOR WHERE barcode_num=$barcode";
-
-                $result = mysqli_query($con, $query);
-                $num_rows = mysqli_num_rows($result);
-                if($num_rows > 0){
-                    mysqli_query($con,"INSERT INTO TRANSACTION(BARCODE_NUM, OFFICE_LOCATION,VISIT_REASON)VALUES('$barcode', '$office', '$visitreason')");
-                    echo 'insert sucessful';
-
-                }
-                else{
-                    echo "Invalid Code. Please re-scan your card ";
-                }
+include 'databaseConnection.php';
 
 
-            }
 
 
-            function fname($barcode)
-            {
+if(isset($_POST['submit'])){
 
-                $hostname = "www.scwdbpacl.com";
-                $username="terhorst";
-                $password="password";
-                $dbname="paclregdb";
+    $barcode=$_POST['scancard'];
+    $visitreason =$_POST['ReasonSelect'];
+    $office = $_POST['LocationSelect'];
 
-                 $con = mysqli_connect($hostname, $username, $password, $dbname);
-                 $query = "SELECT F_NAME FROM VISITOR;";
-                $fnameresult = mysqli_query($con, $query);
+    $query="SELECT * FROM VISITOR WHERE barcode_num=$barcode";
+    $result = mysqli_query($con, $query);
+    
+    $num_rows = mysqli_num_rows($result);
+    if($num_rows > 0){
 
-                return $fnameresult;
-            }
+        mysqli_query($con,"INSERT INTO TRANSACTION(BARCODE_NUM, OFFICE_LOCATION,VISIT_REASON)VALUES('$barcode', '$office', '$visitreason')");
+    }
+    else{
+        echo "Invalid Code. Please re-scan your card ";
+    }
 
-            $fname = fname($barcode);
+  
+}
+
+
+
+
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,13 +49,12 @@
         </ul>
     </div>
 
-    <h2> Thanks for Registering!</h2>
-    <p>Visitor Information:</p>
+    <p style="font-size:25px;">You have sucessfully signed in!</p>
     <br />
-    
-    <p>Visitor Code: <?php echo $barcode; ?></p>
-    <p>First Name: <?php echo $fname;?></p>
-    <p>Last Name:<?php echo $barcode; ?></p>
+    <p style="font-size:20px";>Visitor Information:</p>
+    <p>Visitor Code: <?php echo $barcode ?></p>
+    <p>First Name: <?php echo $fname ?></p>
+    <p>Last Name:<?php ?></p>
     <p>Reason for Visit: <?php echo $visitreason; ?></p>
 
     <p align="center">

@@ -31,22 +31,28 @@ if(!isset($_SESSION['admin_login'])){
                 <a href="adminlogin.php">Back</a>
             </li>
             <li style="float:right">
+                <a href="home.php">Log Out</a>
+            </li>
+            <li style="float:right">
                 <a>Help</a>
             </li>
         </ul>
     </div>
    
-    <h1 align="center">
-        Welcome to the Admin HOMEPAGE
+    <h1>
+         Admin Homepage
     </h1>
     <p> Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.</p>
-
-    <p align="center">
-        <input type="button" onclick="window.location = 'Reports.php'" class="Redirect" value="Create Reports" />
-        <input type="button" onclick="window.location = 'CreateAdmin.php'" class="Redirect" value="Create Admin"/>
-        <input type="button" onclick="window.location='deleteadmin.php'" calss="Redirect" value="Delete Admin"/>
-        <input type="button" onclick="window.location = 'AdminLogIn.php'" class="Redirect" value="LOG OUT" />
-    </p>
-
-
+    <br />
+    <p style="font-size:20px;">Account Creation</p>
+    <p>Click here to create a new admin: <input type="button" onclick="window.location = 'CreateAdmin.php'" class="Redirect" value="Create Admin" /> </p>
+    <p>Click here to delete an existing admin:<input type="button" onclick="window.location='deleteadmin.php'" calss="Redirect" value="Delete Admin" /> </p>
+    <br />
+    <br />
+    <p style="font-size:20px;">Reporting</p>
+    <p>Click here to view the transaction log:<input type="button" onclick="window.location = 'transactionlog.php'" class="Redirect" value="Transaction Log" /> </p>
+    <p>Click here to view visitor information:<input type="button" onclick="window.location = 'Reports.php'" class="Redirect" value="Visitor Information" /> </p>
+   <br />
+   <br />
+        
 </body>

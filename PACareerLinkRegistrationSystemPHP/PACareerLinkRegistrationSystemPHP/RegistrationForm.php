@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
 
 
 <head>
-    <title> Welcome to Registration</title>
+    <title>Registration</title>
 
     <link href="styleSheet.css" rel="stylesheet" />
 
@@ -85,13 +85,12 @@ if(isset($_POST['submit'])){
            
          </ul>
 
-    <h2>Registration Form</h2>
-    <p> Please Complete the form below to register. </p>        
+    
+    <h2 style="font-size:25px">PACL Registration</h2>
+    <p style="font-size:20px;"> Please complete the form below. </p>   
     <form action="registrationForm.php" method="post">
-
-
-        <p>Click inside of the SCAN CARD box and then scan your card.</p>
-        <p>Your Card number will appear if scanned correctly.</p>
+        <p style="font-size:16px;">Click inside the "SCAN CARD" box and scan your card.</p>
+        <p style="font-size:16px;">Your Visitor Code will appear inside the box if scanned correctly.</p>
         <p>SCAN CARD: <input name="scancard" type="text" required/></p>
         <p>First Name:<input name="fname" type="text" style="text-transform: capitalize;" required/> </p>
         <p>Last Name: <input name="lname" type="text" style="text-transform: capitalize;" required /></p>
