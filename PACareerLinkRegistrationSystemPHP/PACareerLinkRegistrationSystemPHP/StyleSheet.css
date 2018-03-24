@@ -63,7 +63,10 @@ div.reportTableDiv{
     
 }
 
-
+div.transactionlogTableDiv{
+      height: 300px;
+   overflow-y:scroll;
+}
 
 
 

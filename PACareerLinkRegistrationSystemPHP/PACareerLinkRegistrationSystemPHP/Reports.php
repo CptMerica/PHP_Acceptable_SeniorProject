@@ -132,12 +132,6 @@ function filterTable($query)
 }
 
 
-function resetTable(){
-   
-
-}
-
-
 ?>
 
 <html>
