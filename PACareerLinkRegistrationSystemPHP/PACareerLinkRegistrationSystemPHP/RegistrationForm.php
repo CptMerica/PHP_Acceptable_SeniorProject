@@ -1,17 +1,7 @@
-<?php 
-
-require_once('databaseConnection.php');
-
-//email template
-$msg = "There is a new visitor in the waiting room. Please assist them as soon as possible." ;
-$msg = wordwrap($msg,70);
-
-// Send email
-mail("celticmania09@hotmail.com","SeniorPorject",$msg);
-
-?>
 
 <?php
+require ('databaseConnection.php');
+
 if(isset($_POST['submit'])){
     $barcode = $_POST['scancard'];
     $first_name = $_POST['fname'];
@@ -31,7 +21,12 @@ if(isset($_POST['submit'])){
 
     if (ctype_digit(str_replace(' ', '', $last4ssn)) === false) {
         
-        $error = 'SSN must contain numbers only';
+        $last4ssnerror = '*SSN must contain numbers only';
+    }
+
+    if (ctype_digit(str_replace(' ','',$barcode))===false){
+        
+        $barcodeerror = '*Barcode must contain numbers only';
     }
 
     else{
@@ -91,10 +86,10 @@ if(isset($_POST['submit'])){
     <form action="registrationForm.php" method="post">
         <p style="font-size:16px;">Click inside the "SCAN CARD" box and scan your card.</p>
         <p style="font-size:16px;">Your Visitor Code will appear inside the box if scanned correctly.</p>
-        <p>SCAN CARD: <input name="scancard" type="text" required/></p>
+        <p>SCAN CARD: <input name="scancard" type="text" maxlength="9" pattern=".{9,}"   required title="Scan Card code must be 9 digits!"/><?php echo $barcodeerror; ?></p>
         <p>First Name:<input name="fname" type="text" style="text-transform: capitalize;" required/> </p>
         <p>Last Name: <input name="lname" type="text" style="text-transform: capitalize;" required /></p>
-        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" maxlength="4" min="4" required /><?php echo $error; ?></p>
+        <p>Last 4 of Social Security Number: <input name="ssnumber" type="text" maxlength="4" pattern=".{4,}"   required title="SSN must be 4 digits!"/><?php echo $last4ssnerror; ?></p>
         <br />
 
         <p>Education: </p>
@@ -106,7 +101,7 @@ if(isset($_POST['submit'])){
             <option value="Associates Degree"> Associate's Degree </option>
             <option value="Bachelors Degree"> Bachelor's Degree </option>
             <option value="Masters Degree"> Master's Degree</option>
-            <option value="Doctorate Degree"> Doctorate Degreee </option>
+            <option value="Doctorate Degree"> Doctorate Degree </option>
         </select>
 
         <p>County of Residence:</p>

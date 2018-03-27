@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>PACL System</title>
 
     <link href="StyleSheet.css" rel="stylesheet" />
 </head>

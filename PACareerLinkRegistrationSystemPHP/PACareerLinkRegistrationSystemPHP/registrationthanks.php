@@ -1,3 +1,5 @@
+
+
 <?php
 
 
@@ -12,25 +14,60 @@ if(isset($_POST['submit'])){
     $visitreason =$_POST['ReasonSelect'];
     $office = $_POST['LocationSelect'];
 
+    //email
+    $washmsg = "There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
+    $mvmsg = "There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
+    $beavermsg ="There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
+    $greenemsg = "There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
+
+    $washmsg = wordwrap($msg,70);
+    $mvmsg = wordwrap($mvmsg,70);
+    $beavermsg = wordwrap($beavermsg,70);
+    $greenemsg = wordwrap($greenemsg,70);
+    if($office == "Washington"){
+        mail("stephenterhorst412@gmail.com","New Visitor (Washingtion)",$washmsg);
+        mail("celticmania09@hotmail.com","New Visitor (Washingtion)",$washmsg);
+    } elseif($office == "Mon Valley"){
+        mail("stephenterhorst412@gmail.com","New Visitor (Mon Valley)",$mvmsg);
+        mail("celticmania09@hotmail.com","New Visitor (Mon Valley)",$mvmsg);
+    }elseif($office == "Beaver"){
+        mail("stephenterhorst412@gmail.com","New Visitor (Beaver)",$beavermsg);
+        mail("celticmania09@hotmail.com","New Visitor (Beaver)",$beavermsg);
+    }elseif($office == "Greene"){
+        mail("stephenterhorst412@gmail.com","New Visitor (Greene)",$greenemsg);
+        mail("celticmania09@hotmail.com","New Visitor (Greene)",$greenemsg);
+    }
+
+
+
     $query="SELECT * FROM VISITOR WHERE barcode_num=$barcode";
     $result = mysqli_query($con, $query);
-    
+
     $num_rows = mysqli_num_rows($result);
     if($num_rows > 0){
 
         mysqli_query($con,"INSERT INTO TRANSACTION(BARCODE_NUM, OFFICE_LOCATION,VISIT_REASON)VALUES('$barcode', '$office', '$visitreason')");
+
     }
     else{
         echo "Invalid Code. Please re-scan your card ";
     }
 
-  
+
+
+    //email template
+
+
+    // Send email
+
 }
 
 
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -28,7 +28,7 @@
     <form method="post" action="registrationthanks.php">
         <p>Click inside the "SCAN CARD" box and scan your card.</p>
         <p>Your Visitor Code will appear inside the box if scanned correctly.</p>
-        <p style="font-size:14px;">SCAN CARD: <input name="scancard" type="text" required /></p>
+        <p>SCAN CARD: <input name="scancard" type="text" maxlength="9" pattern=".{9,}" required title="Scan Card code must be 9 digits!" /><?php echo $barcodeerror; ?></p>
         <br />
             <p>Please select the PA Career Link office you are currently at. </p>
             <select name="LocationSelect" required>
