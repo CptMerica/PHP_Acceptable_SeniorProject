@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     $beavermsg ="There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
     $greenemsg = "There is a new visitor in the waiting room. Please assist them as soon as possible. Reason for Visit:   ".$visitreason ;
 
-    $washmsg = wordwrap($msg,70);
+    $washmsg = wordwrap($washmsg,70);
     $mvmsg = wordwrap($mvmsg,70);
     $beavermsg = wordwrap($beavermsg,70);
     $greenemsg = wordwrap($greenemsg,70);

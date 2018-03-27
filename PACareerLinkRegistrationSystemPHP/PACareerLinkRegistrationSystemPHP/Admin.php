@@ -44,9 +44,15 @@ if(!isset($_SESSION['admin_login'])){
     </h1>
     <p> Thanks, <?php echo $_SESSION['admin_login']; ?> for logging in.</p>
     <br />
-    <p style="font-size:20px;">Account Creation</p>
+    <p style="font-size:20px;">Admin Account Creation</p>
     <p>Click here to create a new admin: <input type="button" onclick="window.location = 'CreateAdmin.php'" class="Redirect" value="Create Admin" /> </p>
     <p>Click here to delete an existing admin:<input type="button" onclick="window.location='deleteadmin.php'" calss="Redirect" value="Delete Admin" /> </p>
+    <br />
+    <br />
+    <p style="font-size:20px;">Staff Account Creation</p>
+    <p>Click here to create a new staff member: <input type="button" onclick="window.location = 'createstaff.php'" class="Redirect" value="Create Staff" /> </p>
+    <p>Click here to delete an existing staff member:<input type="button" onclick="window.location='deletestaff.php'" calss="Redirect" value="Delete Staff" /> </p>
+    
     <br />
     <br />
     <p style="font-size:20px;">Reporting</p>
