@@ -9,7 +9,7 @@
     </RootNamespace>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
     <AssemblyName>PACareerLinkRegistrationSystemPHP</AssemblyName>
-    <SpecificPageValue>deletestaff.php</SpecificPageValue>
+    <SpecificPageValue>searchscancard.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -30,9 +30,11 @@
     <Compile Include="Edit.php" />
     <Compile Include="emailtemplate.php" />
     <Compile Include="populateInfo2.php" />
+    <Compile Include="searchscancard.php" />
     <Compile Include="transactionlog.php" />
     <Compile Include="updatecredentials.php" />
     <Compile Include="updatethanks.php" />
+    <Compile Include="updatevisitor.php" />
     <Compile Include="visitor.php" />
     <Compile Include="returnvisitor.php" />
     <Compile Include="index.php" />

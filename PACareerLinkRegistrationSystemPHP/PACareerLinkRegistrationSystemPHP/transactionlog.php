@@ -84,8 +84,8 @@ function filterTable($query)
     <form method="post">
 
         <h1 align="center">Transaction Log</h1>
-        <div class="transactionlogTableDiv">
-            <table>
+        <div class="transactionlogTableDiv" style="width:100%">
+            <table> 
                 <tr>
                     <th>Transaction ID</th>
                     <th>Visitor Number</th>
