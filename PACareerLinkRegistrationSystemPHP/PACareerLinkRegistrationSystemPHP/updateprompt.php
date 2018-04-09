@@ -1,34 +1,38 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Welcome to Registration</title>
+    <title>Update Info</title>
     <meta charset="utf-8" />
 
     <link href="StyleSheet.css" rel="stylesheet" />
-    
+
 </head>
 <body>
     <class:registration align="center">
-       
+
         <img src="pacareerlink.jpg" style="height: 93px; width:459px;" />
         <div>
             <ul id="menu">
                 <li><a href="home.php">Home</a></li>
-                <li><a href="home.php">Back</a></li>
+                <li><a href="visitor.php">Back</a></li>
                 <li style="float:right"><a>Help</a></li>
             </ul>
         </div>
 
-        <h2>Welcome to the PA Career Link Center!</h2>
+       
         <form method="post">
             <class:registration align="center">
                 <br />
 
-                <p>Have you been here before?</p>
-                 <input type="button" onclick="window.location = 'updateprompt.php'" class="Redirect" value="Yes" />
-                <input type="button" onclick="window.location = 'registrationForm.php'" class="Redirect" value="No" />
+                <p>Do you need to update any information?</p>
+                <input type="button" onclick="window.location = 'updatecredentials.php'" class="Redirect" value="Yes" />
+                <input type="button" onclick="window.location = 'returnvisitor.php'" class="Redirect" value="No" />
 
-</form>
+        </form>
     </class:registration>
 
 </body>
